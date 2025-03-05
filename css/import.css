@@ -1,1 +1,6 @@
 @import url(reset.css);
+@import url(layout/grid.css);
+@import url(layout/cabecalho.css);
+@import url(estilos/botoes.css);
+@import url(estilos/color.css);
+@import url(estilos/fonts.css);
