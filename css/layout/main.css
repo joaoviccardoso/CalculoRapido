@@ -1,0 +1,12 @@
+@import url(../estilos/color.css);
+
+.secao-introducao{
+    width: 50%;
+}
+
+.container-botoes{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+}

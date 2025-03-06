@@ -3,8 +3,8 @@
     --color-botao: #000;
     --color-cards:#000;
     --color-verde: linear-gradient(to right, #A8D5BA, #B7E4C7);
-    --color-letra: #fff;
+    --color-letra: #222222;
 
-    --font-titulo:#000;
-    --font-texto:#000;
+    --font-titulo:"Montserrat", sans-serif;
+    --font-texto: "Inter", sans-serif;
 }
