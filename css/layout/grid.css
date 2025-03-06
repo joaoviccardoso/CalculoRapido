@@ -15,7 +15,7 @@
 
 .cabecalho{
     grid-area: header;
-    height: 9vh;
+    height: 7vh;
     background: var(--color-verde);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -32,6 +32,5 @@
 
 .footer{
     grid-area: footer;
-    height: 90px;
-    border: 1px solid black;
+    background: var(--color-verde);
 }
