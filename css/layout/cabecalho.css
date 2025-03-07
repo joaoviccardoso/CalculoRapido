@@ -1,0 +1,9 @@
+@import url(../estilos/color.css);
+
+.nav-container-navegacao{
+    display: flex;
+    align-items: center;
+    border: solid 1px var(--color-backgroud);
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+}

@@ -4,7 +4,7 @@
     font-family: var(--font-texto);
     padding: 12px 24px;
     border: none;
-    background: linear-gradient(135deg, #007BFF, #0056B3);
+    background:  linear-gradient(to right, #56CCF2, #2F80ED);
     color: white;
     border-radius: 8px;
     cursor: pointer;
@@ -18,4 +18,25 @@
 
 .btnAll:active{
     transform: scale(0.95);
+}
+
+/*botoes do header*/
+
+.btn-cabecalho {
+    background: transparent;
+    color: var(--color-backgroud);
+    padding: 10px 15px;
+    border-right: solid 1px var(--color-backgroud);
+    cursor: pointer;
+    transition: background 0.5s;
+}
+
+.btn-cabecalho:hover{
+    background: var(--color-backgroud);
+    color: var(--color-letra);
+}
+
+.btn-pesquisar{
+    border-radius: 8px;
+    border: solid 1px var(--color-backgroud);
 }
