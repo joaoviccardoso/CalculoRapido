@@ -1,0 +1,53 @@
+/*Celular*/
+@media screen and (max-width: 431px) {
+    .conteudo-principal{
+        height: 87vh;
+        width: 100vw;
+    }
+
+    .secao-introducao{
+        height: 50vh;
+        width: 80vw;
+    }
+
+    .secao-calculos{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        height: 50vh;
+    }
+
+    .container-botoes{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 391px) {
+    .conteudo-principal{
+        height: 100vh;
+        width: 100vw;
+    }
+
+    .secao-calculos{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        height: 60vh;
+    }
+}
+
+/*Celular*/
+@media screen and (max-width: 361px) {
+    .conteudo-principal{
+        height: 87vh;
+    }
+
+    .secao-introducao{
+        height: 40vh;
+    }
+
+    .secao-calculos{
+        height: 60vh;
+    }
+}

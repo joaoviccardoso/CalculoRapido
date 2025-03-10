@@ -1,0 +1,27 @@
+
+/*Tablet*/
+@media (max-width: 786px) {
+    .nav-container-pesquisar{
+        display: none;
+    }
+}
+
+/*Celular*/
+@media screen and (max-width: 431px) {
+    .cabecalho{
+        height: 11vh;
+        width: 100vw;
+    }
+
+    .nav-container-navegacao{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        border: none;
+    }
+
+    .nav-container-pesquisar {
+        display: none;
+    }
+}

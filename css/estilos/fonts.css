@@ -8,12 +8,14 @@
     color: var(--color-letra);
     line-height: 1.6;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    margin: 0 .8rem 0 .8rem;
 }
 
 .font-texto{
     font-size: 1.2rem;
     font-family: var(--font-texto);
     font-weight: 400;
+    margin: 0;
 }
 
 /*Fontes do main*/
@@ -22,10 +24,4 @@
     text-align: center;
     margin-bottom: 1.5rem;
     color:#00796B;
-}
-
-/*texto footer*/
-
-.text-end {
-     
 }

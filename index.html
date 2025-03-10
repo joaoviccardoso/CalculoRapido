@@ -16,10 +16,10 @@
 <body class="body">
     <header class="cabecalho">
         <nav class="navbar">
-            <div class="container-fluid">
+            <div class="container-fluid p-0">
               
               <nav class="nav-container-navegacao">
-                <a href="index.html" style="text-decoration: none;"><h1 class="font-titulo mx-2 my-0" style="color: white;">CálculoRápido</h1></a>
+                <a href="index.html" style="text-decoration: none;"><h1 class="font-titulo font-tituloResponsivo" style="color: white;">CálculoRápido</h1></a>
 
                 <div class="dropdown">
                   <a class="dropdown-toggle btn-cabecalho" style="text-decoration: none;" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -57,7 +57,7 @@
 
              
 
-              <form class="nav-container-pesquisar d-flex" role="search">
+              <form class="nav-container-pesquisar" role="search">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                 <a class="btn-cabecalho btn-pesquisar" style="text-decoration: none;" type="submit">Pesquisar</a>
               </form>
@@ -75,11 +75,13 @@
   
       <section class="secao-calculos">
           <h2 class="font-titulo font-titulo-introducao">Calculadoras</h2>
-          <p class="font-texto font-texto-introducao" style="text-align: center;">Escolha uma calculadora para utilizar.</p>
+          <p class="font-texto font-texto-introducao mb-3" style="text-align: center;">Escolha uma calculadora para utilizar.</p>
+
           <nav class="container-botoes">
-            
+
+            <a href="">
               <button class="btnAll botao-navegacao">Calculadora Simples</button>
-            
+            </a>
 
             <a href="">
               <button class="btnAll botao-navegacao">Juros Compostos</button>
@@ -108,7 +110,7 @@
 
       <div class="container-copuright text-center p-2" style="background-color: rgba(0, 0, 0, 0.2);">
         <a class="text-white font-texto" style="text-decoration: none;" href="">© 2025 Copyright: João Victor S.C</a>
-        <p class="text-end font-texto m-0" style="color: white; display: inline-block;">Versão 1.0.0</p>
+        <p class="text-end font-texto m-0 fs-6" style="color: white; display: inline-block;">Versão 1.0.0</p>
       </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>

@@ -5,3 +5,9 @@
 @import url(estilos/botoes.css);
 @import url(estilos/color.css);
 @import url(estilos/fonts.css);
+@import url(responsivo/cabecalhoResponsivo.css);
+@import url(responsivo/gridResponsivo.css);
+@import url(responsivo/mainResponsivo.css);
+@import url(responsivo/footerResponsivo.css);
+@import url(responsivo/responsivoEstilo/fontResponsiva.css);
+@import url(responsivo/responsivoEstilo/botoesResponsivo.css);
