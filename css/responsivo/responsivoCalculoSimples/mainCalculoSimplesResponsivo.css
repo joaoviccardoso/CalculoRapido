@@ -1,0 +1,15 @@
+@import url(../estilos/color.css);
+
+@media screen and (max-width: 431px) {
+    .container-BtnsCalculos{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 391px) {
+   
+}
+
+@media screen and (max-width: 361px) {
+   
+}

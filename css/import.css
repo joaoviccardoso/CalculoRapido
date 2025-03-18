@@ -9,5 +9,7 @@
 @import url(responsivo/gridResponsivo.css);
 @import url(responsivo/mainResponsivo.css);
 @import url(responsivo/footerResponsivo.css);
+@import url(responsivo/responsivoCalculoSimples/mainCalculoSimplesResponsivo.css);
 @import url(responsivo/responsivoEstilo/fontResponsiva.css);
 @import url(responsivo/responsivoEstilo/botoesResponsivo.css);
+@import url(layout/layout-calculo-simples/mainSimples.css);

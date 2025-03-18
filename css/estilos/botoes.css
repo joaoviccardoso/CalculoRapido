@@ -23,7 +23,7 @@
 
 /*botoes do header*/
 
-.btn-cabecalho {
+.btn-cabecalho{
     background: transparent;
     color: var(--color-backgroud);
     padding: 14px 15px;
@@ -45,5 +45,19 @@
 /*botoes do main*/
 
 .botao-navegacao{
-    background:  linear-gradient(to right, #56CCF2, #2F80ED);
+    background: linear-gradient(to right, #56CCF2, #2F80ED);
+}
+
+.btn-escolher-calculo{
+    width: 100%;
+    color: var(--color-letra);
+    border: none;
+    transition: background 0.5s;
+    background: linear-gradient(135deg, #4A90E2, #2C7BE5);
+
+}
+
+.btn-escolher-calculo:hover{
+    background: linear-gradient(135deg, #2C7BE5, #1E5FA3);
+    color: white;
 }
