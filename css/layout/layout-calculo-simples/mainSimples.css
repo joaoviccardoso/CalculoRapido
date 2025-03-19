@@ -5,6 +5,11 @@
     flex-direction: row;
 }
 
+.lista-btns-calculoSimples{
+    overflow-y: scroll;
+    height: 82vh;
+}
+
 .container-BtnsCalculos{
     height: 100%;
     width: 15vw;
