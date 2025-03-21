@@ -94,29 +94,30 @@
       <section class="container-BtnsCalculos">
         <ul class="lista-btns-calculoSimples">
           <li><h3 class="text-center font-titulo fs-5">Calculos Simples</h3></li>
-          <li><button class="btn-escolher-calculo font-texto">Soma e Subtração</button></li>
-          <li><button class="btn-escolher-calculo font-texto">Multiplicação e Divisão</button></li>
-          <li><button class="btn-escolher-calculo font-texto">Porcentagem</button></li>
-          <li><button class="btn-escolher-calculo font-texto">Regra de Três</button></li>
-          <li><button class="btn-escolher-calculo font-texto">Média Aritmética</button></li>
+          <li><button class="btn-escolher-calculo font-texto" id="somaSubtracao">Soma e Subtração</button></li>
+          <li><button class="btn-escolher-calculo font-texto" id="multiplicaoDivisao">Multiplicação e Divisão</button></li>
+          <li><button class="btn-escolher-calculo font-texto" id="porcentagem">Porcentagem</button></li>
+          <li><button class="btn-escolher-calculo font-texto" id="regraDeTres">Regra de Três</button></li>
+          <li><button class="btn-escolher-calculo font-texto" id="mediaAritmetrica">Média Aritmética</button></li>
           <li><h3 class="text-center font-titulo fs-5">Cálculos Financeiros</h3></li>
-          <li><button class="btn-escolher-calculo font-texto">Juros Simples</button></li>
-          <li><button class="btn-escolher-calculo font-texto">Juros Compostos</button></li>
-          <li><button class="btn-escolher-calculo font-texto">Desconto Comercial</button></li>
-          <li><button class="btn-escolher-calculo font-texto">Cálculo de Parcelas e Financiamentos</button></li>
+          <li><button class="btn-escolher-calculo font-texto" id="jurosSimples">Juros Simples</button></li>
+          <li><button class="btn-escolher-calculo font-texto" id="jurosCompostos">Juros Compostos</button></li>
+          <li><button class="btn-escolher-calculo font-texto" id="descontoComercial">Desconto Comercial</button></li>
+          <li><button class="btn-escolher-calculo font-texto" id="calculoDeParcelasFinanciamento">Cálculo de Parcelas e Financiamentos</button></li>
           <li><h3 class="text-center font-titulo fs-5">Cálculos Trabalhistas</h3></li>
-          <li><button class="btn-escolher-calculo font-texto">Cálculo de Férias</button></li>
-          <li><button class="btn-escolher-calculo font-texto">13º Salário</button></li>
-          <li><button class="btn-escolher-calculo font-texto">Hora Extra</button></li>
-          <li><button class="btn-escolher-calculo font-texto">Rescisão Trabalhista</button></li>
+          <li><button class="btn-escolher-calculo font-texto" id="calculoFerias">Cálculo de Férias</button></li>
+          <li><button class="btn-escolher-calculo font-texto" id="salario">13º Salário</button></li>
+          <li><button class="btn-escolher-calculo font-texto" id="horaExtra">Hora Extra</button></li>
+          <li><button class="btn-escolher-calculo font-texto" id="rescisaoTrabalhista">Rescisão Trabalhista</button></li>
           <li><h3 class="text-center font-titulo fs-5">Cálculos de Consumo e Utilidade</h3></li>
-          <li><button class="btn-escolher-calculo font-texto">Cálculo de Consumo de Energia</button></li>
-          <li><button class="btn-escolher-calculo font-texto">Conversão de Moedas</button></li>
-          <li><button class="btn-escolher-calculo font-texto">Conversão de Medidas (metros para centímetros, km para milhas, etc.)</button></li>
+          <li><button class="btn-escolher-calculo font-texto" id="consumoEnergia">Cálculo de Consumo de Energia</button></li>
+          <li><button class="btn-escolher-calculo font-texto" id="conversaoMoedas">Conversão de Moedas</button></li>
+          <li><button class="btn-escolher-calculo font-texto" id="conversaoMedidas">Conversão de Medidas (metros para centímetros, km para milhas, etc.)</button></li>
           <li><h3 class="text-center font-titulo fs-5">Cálculos Acadêmicos</h3></li>
-          <li><button class="btn-escolher-calculo font-texto">Equação do 1º e 2º grau</button></li>
-          <li><button class="btn-escolher-calculo font-texto">Área e Perímetro de Figuras Geométricas</button></li>
-          <li><button class="btn-escolher-calculo font-texto">Regra de Três Composta</button></li>
+          <li><button class="btn-escolher-calculo font-texto" id="equacao1grau">Equação do 1º</button></li>
+          <li><button class="btn-escolher-calculo font-texto" id="equacao2grau">Equação do 2º</button></li>
+          <li><button class="btn-escolher-calculo font-texto" id="areaPerimetro">Área e Perímetro de Figuras Geométricas</button></li>
+          <li><button class="btn-escolher-calculo font-texto" id="regraTresComposta">Regra de Três Composta</button></li>
         </ul>
       </section>
 
@@ -136,8 +137,7 @@
               <li class="font-texto">Insira os valores e obtenha o resultado instantaneamente.</li>
               <li class="font-texto">Se quiser aprender como fazer o cálculo manualmente, confira a explicação detalhada!</li>
           </ul>
-      </div>
-      
+        </div>
       </section>
     </main>
     
@@ -159,5 +159,6 @@
           <p class="text-end font-texto m-0 fs-6" style="color: white; display: inline-block;">Versão 1.0.0</p>
         </div>
     </footer>
+    <script type="module" src="./js/app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
