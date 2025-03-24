@@ -5,7 +5,7 @@ export class Templetes {
         containerExibirCalculo.innerHTML = "";
 
         const calculos = {
-            somaSubtracao: { titulo: "Somar e Subtrair", campos: ["Número 1", "Número 2"] },
+            somaSubtracao: { titulo: "Somar e Subtrair", campos: ["Número 1", "Número 2", "Somar ou Subtrair"] },
             multiplicaoDivisao: { titulo: "Multiplicação e Divisão", campos: ["Número 1", "Número 2"] },
             porcentagem: { titulo: "Porcentagem", campos: ["Valor", "Porcentagem"] },
             regraDeTres: { titulo: "Regra de Três", campos: ["Valor 1", "Valor 2", "X"] },
@@ -36,12 +36,19 @@ export class Templetes {
     }
 
     gerarTemplate(titulo, campos) {
-        let inputsHTML = campos.map(campo => `<input type="number" placeholder="${campo}">`).join("");
+        let inputsHTML = campos.map(campo => `<label class="">${campo}<input type="number" class="inputs-templete" placeholder="${campo}"></label>`).join("");
 
         return `
-            <h2>${titulo}</h2>
-            ${inputsHTML}
-            <button>Calcular</button>
+            <div class="container-templete-calculos">
+                <h2 class="texto-introducao">${titulo}</h2>
+                <div class="container-templete-inputs">
+                    ${inputsHTML}
+                </div>
+                <div class="container-templete-btns">
+                    <button class="btn-realizar-calcular">Calcular</button>
+                    <button class="btn-comoFazer">Como Fazer</button>
+                </div>
+            </div>
         `;
     }
 }

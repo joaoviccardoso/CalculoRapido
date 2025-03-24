@@ -53,11 +53,54 @@
     color: var(--color-letra);
     border: none;
     transition: background 0.5s;
-    background: linear-gradient(135deg, #4A90E2, #2C7BE5);
+    background: var(--color-botao);
 
 }
 
 .btn-escolher-calculo:hover{
-    background: linear-gradient(135deg, #2C7BE5, #1E5FA3);
+    background: var(--color-botao-hover);
     color: white;
+}
+
+.btn-realizar-calcular, .btn-comoFazer{
+    display: block;
+    font-family: var(--font-texto);
+    width: 100%;
+    padding: 10px 15px;
+    background: var(--color-botao);
+    border: none;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-realizar-calcular:hover{
+    background: var(--color-botao-hover);
+}
+
+.btn-comoFazer{
+    border: 2px solid #4A90E2; 
+    background: white; 
+    color: #3f51b5;
+}
+
+.btn-comoFazer:hover {
+    opacity: 0.8;
+    transition: 0.3s;
+}
+
+.inputs-templete{
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.inputs-templete:focus{
+    border-color: #2F80ED;
+    box-shadow: 0 0 5px rgba(55, 83, 241, 0.5);
+    outline: none;
 }
