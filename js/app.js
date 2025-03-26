@@ -1,11 +1,11 @@
-import { Templetes } from "./view/templetes.js";
+import { TempletesController } from "./controller/templenteController.js";
 
 const btnsCalculos = document.querySelectorAll(".btn-escolher-calculo");
-const templetes = new Templetes();
+const templetesController = new TempletesController();
 
 btnsCalculos.forEach(btnCalculo => {
     btnCalculo.addEventListener("click", function(){
         const idDoBtnCalculo = btnCalculo.id;
-        templetes.exibirCalculos(idDoBtnCalculo)
+        templetesController.exibirCalculos(idDoBtnCalculo)
     })
 });
