@@ -24,7 +24,22 @@ export class RealizarCalculos{
                 break
             case "btnSubtracao":
                 resposta = this.calculos.subtracao(valores);
-                break    
+                break  
+            case "btnMultiplicacao":
+                resposta = this.calculos.multiplicacao(valores);
+                break
+            case "btnDivisao":
+                resposta = this.calculos.divisao(valores);
+                break
+            case "btnPorcentagem":
+                resposta = this.calculos.porcentagem(valores);
+                break
+            case "btnRegraDeTres":
+                resposta = this.calculos.regraDeTres(valores);
+                break
+            case "btnMediaAritmetrica":
+                resposta = this.calculos.mediaAritmetica(valores);
+                break
             default:
                 console.warn("Operação não reconhecida!");
                 return;

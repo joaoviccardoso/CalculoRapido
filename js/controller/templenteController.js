@@ -13,7 +13,7 @@ export class TempletesController{
             multiplicao: { titulo: "Multiplicação", campos: ["Número 1", "Número 2"], id: "btnMultiplicacao" },
             divisao: { titulo: "Divisão", campos: ["Número 1", "Número 2"], id: "btnDivisao" },
             porcentagem: { titulo: "Porcentagem", campos: ["Valor", "Porcentagem"], id: "btnPorcentagem" },
-            regraDeTres: { titulo: "Regra de Três", campos: ["Valor 1", "Valor 2", "X"], id: "btnRegraDeTres" },
+            regraDeTres: { titulo: "Regra de Três", campos: ["Valor 1", "Valor 2", "Valor 3"], id: "btnRegraDeTres" },
             mediaAritmetrica: { titulo: "Média Aritmética", campos: ["Número 1", "Número 2", "Número 3"], id: "btnMediaAritmetrica" },
             jurosSimples: { titulo: "Juros Simples", campos: ["Capital", "Taxa (%)", "Tempo"], id: "btnJurosSimples" },
             jurosCompostos: { titulo: "Juros Compostos", campos: ["Capital", "Taxa (%)", "Tempo"], id: "btnJurosCompostos" },
