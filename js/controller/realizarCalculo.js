@@ -40,6 +40,18 @@ export class RealizarCalculos{
             case "btnMediaAritmetrica":
                 resposta = this.calculos.mediaAritmetica(valores);
                 break
+            case "btnJurosSimples":
+                resposta = this.calculos.jurosSimples(valores)
+                break  
+            case "btnJurosCompostos":
+                resposta = this.calculos.jurosCompostos(valores)
+                break
+            case "btnDescontoComercial":
+                resposta = this.calculos.descontoComercial(valores)
+                break 
+            case "btnCalculoDeParcelasFinanciamento":
+                resposta = this.calculos.calculoDeParcelasFinanciamento(valores)
+                break  
             default:
                 console.warn("Operação não reconhecida!");
                 return;
