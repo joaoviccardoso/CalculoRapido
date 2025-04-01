@@ -52,6 +52,18 @@ export class RealizarCalculos{
             case "btnCalculoDeParcelasFinanciamento":
                 resposta = this.calculos.calculoDeParcelasFinanciamento(valores)
                 break  
+            case "btnCalculoFerias":
+                resposta = this.calculos.calculoFerias(valores)
+                break
+            case "btnTrezeSalario":
+                resposta = this.calculos.trezeSalario(valores)
+                break 
+            case "btnHoraExtra":
+                resposta = this.calculos.horaExtra(valores)
+                break   
+            case "btnRescisaoTrabalhista":
+                resposta = this.calculos.rescisaoTrabalhista(valores)
+                break      
             default:
                 console.warn("Operação não reconhecida!");
                 return;
