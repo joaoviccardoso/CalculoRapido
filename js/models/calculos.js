@@ -1,8 +1,11 @@
 import { CalculoIrEInss } from "./calculosIrInss.js";
+import { CalculosResicao } from "./calculosResicao.js";
 
 export class Calculos{
     soma(valores){
-        return valores.reduce((acc, num) => acc + num, 0);
+        const valor1 = Number(valores[0])
+        const valor2 = Number(valores[1])
+        return valor1 + valor2
     }
 
     subtracao(valores){
@@ -121,23 +124,46 @@ export class Calculos{
         if (mesesTrabalhado > 12) mesesTrabalhado = 12;
 
         let trezeSala = (valor / 12) * mesesTrabalhado;
-        let valorTotal = trezeSala + valor;
-        console.log(valorTotal)
-        let Ir = IrOuInss.calcularIR(valorTotal)
-        //valor com o desconto do ir
-        return valorTotal - Ir
-    }
+
+        let inss = IrOuInss.calcularInss13(trezeSala);
+        let baseIR = trezeSala - inss;
+
+        let ir = IrOuInss.calcularIR(baseIR);
+        let valorFinal = trezeSala - inss - ir;
+
+        return valorFinal
+      }
 
     horaExtra(valores){
-        const valor = valores[0];
-        const taxa = valores[1];
-        const tempo = valores[2];
+        const salario = valores[0];
+        const horasExtras = valores[1];
+       
+        let valorDaHoraTrabalhada = salario / 220;
+    
+        let valorDaHoraExtra = valorDaHoraTrabalhada * 1.5;
+
+        return valorDaHoraExtra * horasExtras
     }
 
-    rescisaoTrabalhista(valores){
-        const valor = valores[0];
-        const taxa = valores[1];
-        const tempo = valores[2];
-    }
+    //arrumar a operação matematica dos dias trabalhados esta funcionadondo de forma errada estou pegando os dias e os meses trabalhodo de forma errada
+    rescisaoTrabalhista(valores) {
+        const calculosResicao = new CalculosResicao();
+        
+        const salarioBruto = Number(valores[0]);
+        const saldoFgts = Number(valores[1]);
+        const dataInicial = valores[2];
+        const dataFinal = valores[3];
+        const tipoDeDemissao = valores[4];
 
+        let diasTrabalhados = calculosResicao.calcularDiasTrabalhados(dataInicial, dataFinal);
+        let mesesTrabalhados = calculosResicao.calcularMesesTrabalhados(dataInicial, dataFinal);
+
+        console.log("Salário Bruto:", salarioBruto);
+        console.log("Saldo FGTS:", saldoFgts);
+        console.log("Dias Trabalhados:", diasTrabalhados);
+        console.log("Meses Trabalhados:", mesesTrabalhados);
+        console.log("Tipo de Demissão:", tipoDeDemissao);
+
+        return calculosResicao.calcularRescisao(salarioBruto, diasTrabalhados, mesesTrabalhados, saldoFgts, tipoDeDemissao);
+    }
 }

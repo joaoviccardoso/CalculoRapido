@@ -78,7 +78,7 @@ export class RealizarCalculos{
     }
 
     pegarInputs(){
-        return this.inputs.map(input => Number(input.value || 0));
+        return this.inputs.map(input => input.value || 0);
     }
 
     pegarIdBtn(){

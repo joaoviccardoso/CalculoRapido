@@ -1,6 +1,16 @@
 export class Templetes {
     gerarTemplate(titulo, campos, id) {
-        let inputsHTML = campos.map(campo => `<label class="">${campo}<input type="number" class="inputs-templete" placeholder="${campo}"></label>`).join("");
+        let inputsHTML = campos.map(campo => {
+            if (titulo === "Rescisão Trabalhista" && campo === "Tipo de Rescisão") {
+                return this.templeteSelectRescisao(campo)
+            } else if (campo === "Data de Início" || campo === "Data Final"){
+                return this.templeteDatas(campo)
+            } else {
+                return `<label>${campo}<input type="number" class="inputs-templete" placeholder="${campo}"></label>`;
+            }
+        }).join("");
+        
+            
         const container = document.createElement("div");
         container.classList.add("container-templete-calculos")
 
@@ -19,6 +29,23 @@ export class Templetes {
         `;
 
         return container
+    }
+
+    templeteSelectRescisao(campo){
+        return `
+            <label>${campo}
+                <select class="inputs-templete">
+                    <option value="Demissão de comum acordo">Demissão de comum acordo</option>
+                    <option value="Dispensa sem justa causa">Dispensa sem justa causa</option>
+                    <option value="Dispensa com justa causa">Dispensa com justa causa</option>
+                    <option value="Pedido de demissão">Pedido de demissão</option>
+                </select>
+            </label>
+                `;
+    }
+
+    templeteDatas(campo){
+       return `<label>${campo}<input type="date" class="inputs-templete"></label>`;
     }
 
 }

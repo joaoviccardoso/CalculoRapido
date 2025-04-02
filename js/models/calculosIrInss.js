@@ -13,6 +13,21 @@ export class CalculoIrEInss {
         return desconto
     }   
 
+    calcularInss13(base) {
+        switch (true) {
+            case base <= 1412:
+                return base * 0.075;
+            case base <= 2666.68:
+                return base * 0.09;
+            case base <= 4000.03:
+                return base * 0.12;
+            case base <= 7786.02:
+                return base * 0.14;
+            default:
+                return 908.86;
+        }
+    }
+
     calcularIR(base) {
         switch (true) {
             case base <= 1903.98:
@@ -27,4 +42,6 @@ export class CalculoIrEInss {
                 return base * 0.275 - 896.00;
         }
     }
+
+   
 }
