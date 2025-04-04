@@ -154,16 +154,13 @@ export class Calculos{
         const dataInicial = valores[2];
         const dataFinal = valores[3];
         const tipoDeDemissao = valores[4];
-
-        let diasTrabalhados = calculosResicao.calcularDiasTrabalhados(dataInicial, dataFinal);
-        let mesesTrabalhados = calculosResicao.calcularMesesTrabalhados(dataInicial, dataFinal);
+        const avisoPrevio = valores[5];
 
         console.log("Salário Bruto:", salarioBruto);
         console.log("Saldo FGTS:", saldoFgts);
-        console.log("Dias Trabalhados:", diasTrabalhados);
-        console.log("Meses Trabalhados:", mesesTrabalhados);
         console.log("Tipo de Demissão:", tipoDeDemissao);
+        console.log("Data inicial:", dataInicial)
 
-        return calculosResicao.calcularRescisao(salarioBruto, diasTrabalhados, mesesTrabalhados, saldoFgts, tipoDeDemissao);
+        return calculosResicao.calcularRescisao(salarioBruto, saldoFgts, dataInicial, dataFinal, tipoDeDemissao);
     }
 }

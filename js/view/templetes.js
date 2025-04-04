@@ -3,9 +3,11 @@ export class Templetes {
         let inputsHTML = campos.map(campo => {
             if (titulo === "Rescisão Trabalhista" && campo === "Tipo de Rescisão") {
                 return this.templeteSelectRescisao(campo)
-            } else if (campo === "Data de Início" || campo === "Data Final"){
+            }else if(titulo === "Rescisão Trabalhista" && campo === "Aviso Previo"){
+                return this.templeteSelectAvisoPrevio(campo)
+            }else if (campo === "Data de Início" || campo === "Data Final"){
                 return this.templeteDatas(campo)
-            } else {
+            }else {
                 return `<label>${campo}<input type="number" class="inputs-templete" placeholder="${campo}"></label>`;
             }
         }).join("");
@@ -44,8 +46,21 @@ export class Templetes {
                 `;
     }
 
+    templeteSelectAvisoPrevio(campo){
+        return `
+            <label>${campo}
+                <select class="inputs-templete">
+                    <option value="Trabalhado">Trabalhado</option>
+                    <option value="Indenizado">Indenizado</option>
+                    <option value="Pedido de demissão">Pedido de demissão</option>
+                </select>
+            </label>
+                `;
+    }
+
     templeteDatas(campo){
        return `<label>${campo}<input type="date" class="inputs-templete"></label>`;
     }
+
 
 }
