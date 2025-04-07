@@ -155,12 +155,14 @@ export class Calculos{
         const dataFinal = valores[3];
         const tipoDeDemissao = valores[4];
         const avisoPrevio = valores[5];
+        const feriasVencidas = valores[6];
 
         console.log("Salário Bruto:", salarioBruto);
         console.log("Saldo FGTS:", saldoFgts);
         console.log("Tipo de Demissão:", tipoDeDemissao);
-        console.log("Data inicial:", dataInicial)
+        console.log("Data inicial:", dataInicial);
+        console.log("Data inicial:", feriasVencidas);
 
-        return calculosResicao.calcularRescisao(salarioBruto, saldoFgts, dataInicial, dataFinal, tipoDeDemissao);
+        return calculosResicao.calcularRescisao(salarioBruto, saldoFgts, dataInicial, dataFinal, tipoDeDemissao, avisoPrevio, feriasVencidas);
     }
 }

@@ -9,3 +9,5 @@ btnsCalculos.forEach(btnCalculo => {
         templetesController.exibirCalculos(idDoBtnCalculo)
     })
 });
+
+

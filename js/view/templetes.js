@@ -5,6 +5,8 @@ export class Templetes {
                 return this.templeteSelectRescisao(campo)
             }else if(titulo === "Rescisão Trabalhista" && campo === "Aviso Previo"){
                 return this.templeteSelectAvisoPrevio(campo)
+            }else if (campo === "Rescisão Trabalhista" || campo === "Ferias Vencidas"){
+                return this.templeteFeriasVencidas(campo)
             }else if (campo === "Data de Início" || campo === "Data Final"){
                 return this.templeteDatas(campo)
             }else {
@@ -51,8 +53,20 @@ export class Templetes {
             <label>${campo}
                 <select class="inputs-templete">
                     <option value="Trabalhado">Trabalhado</option>
+                    <option value="descontado">descontado</option>
                     <option value="Indenizado">Indenizado</option>
                     <option value="Pedido de demissão">Pedido de demissão</option>
+                </select>
+            </label>
+                `;
+    }
+
+    templeteFeriasVencidas(campo){
+        return `
+            <label>${campo}
+                <select class="inputs-templete">
+                    <option value="Vencida">Vencida</option>
+                    <option value="Paga">Paga</option>
                 </select>
             </label>
                 `;

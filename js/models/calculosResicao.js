@@ -52,7 +52,9 @@ export class CalculosResicao {
         return (salario / 12) * mesesTrabalhado
     }
 
-    calcularRescisao(salarioBruto, saldoFgts, dataInicial, dataFinal, tipoDeDemissao) {
+    
+
+    calcularRescisao(salarioBruto, saldoFgts, dataInicial, dataFinal, tipoDeDemissao, avisoPrevio, feriasEstaVencidas) {
         let anosTrabalhado = this.calculosDosAnosTrabalhado(dataInicial, dataFinal);
 
         let valorDoDiaTrabalhado = this.valorDoDiaTrabalhado(salarioBruto);
@@ -71,6 +73,9 @@ export class CalculosResicao {
 
         let multaFGTS = saldoFgts * 0.4;
         let multaFGTSmaisFGTS = multaFGTS + saldoFgts
+
+        let totalRescisao = 0;
+
         console.table({
             AvisoPrévioDias: avisoPrevioDias,
             ValorDiaTrabalhado: valorDoDiaTrabalhado,
@@ -80,35 +85,55 @@ export class CalculosResicao {
             UmTerçoFérias: umTerzoDFerias,
             DécimoTerceiro: decimoTerceiro,
             DecimoAvisoPrevio: decimoTerceiroAvicoPrevio,
-            fgts: multaFGTSmaisFGTS
+            fgts: multaFGTSmaisFGTS,
+            feriasVencidas: feriasEstaVencidas
           });
-          
-
-        // Tratamento do aviso prévio
-        /*if (avisoPrevio === "indenizado") {
-            avisoPrevioValor = salarioBruto;
-        } else if (avisoPrevio === "descontado") {
-            avisoPrevioValor = -salarioBruto; // Desconta do total
-        }
 
         switch (tipoDeDemissao) {
             case "Dispensa sem justa causa":
-                multaFGTS = saldoFGTS * 0.4;
-                totalRescisao = saldoSalario + salarioBruto + feriasProporcionais + decimoTerceiro + multaFGTS + avisoPrevioValor;
+                totalRescisao +=  saldoDoSalarioTrabalhadoNoMes + avisoPrevioIndenizado + feriasProporcionais + umTerzoDFerias + decimoTerceiro + decimoTerceiroAvicoPrevio + multaFGTSmaisFGTS;
+                //Tratamento das ferias venciadas
+                if (avisoPrevio === "descontado") {
+                    totalRescisao -= salarioBruto;
+                }
+
+                //Tratamento das ferias venciadas
+                if(feriasEstaVencidas === "Vencida"){
+                    totalRescisao += feriasVencidas;
+                }
+
                 break;
             case "Pedido de demissão":
-                totalRescisao = saldoSalario + feriasProporcionais + decimoTerceiro + avisoPrevioValor;
+                totalRescisao = salarioBruto + feriasProporcionais + umTerzoDFerias + decimoTerceiro;
+                 //Tratamento das ferias venciadas
+                if(feriasEstaVencidas === "Vencida"){
+                    totalRescisao += feriasVencidas;
+                }
+                 //Tratamento das ferias venciadas
+                if (avisoPrevio === "descontado") {
+                    totalRescisao -= salarioBruto;
+                }
                 break;
+
             case "Demissão de comum acordo":
-                multaFGTS = saldoFGTS * 0.2;
-                totalRescisao = saldoSalario + (salarioBruto / 2) + feriasProporcionais + decimoTerceiro + multaFGTS + avisoPrevioValor;
+                totalRescisao = salarioBruto + (avisoPrevioIndenizado / 2) + feriasProporcionais + umTerzoDFerias + decimoTerceiro + (saldoFgts * 0.2);
+                 //Tratamento das ferias venciadas
+                if(feriasEstaVencidas === "Vencida"){
+                    totalRescisao += feriasVencidas;
+                }
                 break;
+
             case "Dispensa com justa causa":
-                totalRescisao = saldoSalario;
+                totalRescisao = salarioBruto 
+                //Tratamento das ferias venciadas
+                if(feriasEstaVencidas === "Vencida"){
+                    totalRescisao += feriasVencidas;
+                }
                 break;
+
             default:
                 totalRescisao = 0;
-        }*/
+        }
 
         return totalRescisao;
     }

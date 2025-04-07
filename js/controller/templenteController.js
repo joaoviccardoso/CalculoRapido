@@ -22,7 +22,7 @@ export class TempletesController{
             calculoFerias: { titulo: "Cálculo de Férias", campos: ["Salário Base", "Meses Trabalhados", "Dias vendidos"], id: "btnCalculoFerias" },
             salario: { titulo: "13º Salário", campos: ["Salário Base", "Meses Trabalhados"], id: "btnTrezeSalario" },
             horaExtra: { titulo: "Hora Extra", campos: ["Salário Hora", "Horas Extras"], id: "btnHoraExtra" },
-            rescisaoTrabalhista: { titulo: "Rescisão Trabalhista", campos: ["Salário Base", "Saldo FGTS" , "Data de Início", "Data Final" , "Tipo de Rescisão", "Aviso Previo"], id: "btnRescisaoTrabalhista" },
+            rescisaoTrabalhista: { titulo: "Rescisão Trabalhista", campos: ["Salário Base", "Saldo FGTS" , "Data de Início", "Data Final" , "Tipo de Rescisão", "Aviso Previo", "Ferias Vencidas"], id: "btnRescisaoTrabalhista" },
             consumoEnergia: { titulo: "Cálculo de Consumo de Energia", campos: ["Potência (W)", "Horas de uso", "Dias no mês"], id: "btnConsumoEnergia" },
             conversaoMoedas: { titulo: "Conversão de Moedas", campos: ["Valor em moeda A", "Cotação"], id: "btnConversaoMoedas" },
             conversaoMedidas: { titulo: "Conversão de Medidas", campos: ["Valor", "Unidade de origem", "Unidade de destino"], id: "btnConversaoMedidas" },
