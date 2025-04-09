@@ -1,4 +1,5 @@
 import { Templetes } from "../view/templetes.js";
+import { TempeltesMedidas } from "../view/templetesMedidas.js";
 import { RealizarCalculos } from "./realizarCalculo.js";
 
 export class TempletesController{
@@ -23,9 +24,11 @@ export class TempletesController{
             salario: { titulo: "13º Salário", campos: ["Salário Base", "Meses Trabalhados"], id: "btnTrezeSalario" },
             horaExtra: { titulo: "Hora Extra", campos: ["Salário Hora", "Horas Extras"], id: "btnHoraExtra" },
             rescisaoTrabalhista: { titulo: "Rescisão Trabalhista", campos: ["Salário Base", "Saldo FGTS" , "Data de Início", "Data Final" , "Tipo de Rescisão", "Aviso Previo", "Ferias Vencidas"], id: "btnRescisaoTrabalhista" },
-            consumoEnergia: { titulo: "Cálculo de Consumo de Energia", campos: ["Potência (W)", "Horas de uso", "Dias no mês"], id: "btnConsumoEnergia" },
+            consumoEnergia: { titulo: "Cálculo de Consumo de Energia", campos: ["Potência (W)", "Horas de uso", "Dias no mês", "Preço KWH"], id: "btnConsumoEnergia" },
             conversaoMoedas: { titulo: "Conversão de Moedas", campos: ["Valor em moeda A", "Cotação"], id: "btnConversaoMoedas" },
-            conversaoMedidas: { titulo: "Conversão de Medidas", campos: ["Valor", "Unidade de origem", "Unidade de destino"], id: "btnConversaoMedidas" },
+
+            conversaoMedidas: { titulo: "Conversão de Medidas", campos: ["Tipo De Conversão"], id: "btnConversaoMedidas" },
+
             equacao1grau: { titulo: "Equação do 1º Grau", campos: ["Coeficiente A", "Coeficiente B"], id: "btnEquacao1Grau" },
             equacao2grau: { titulo: "Equação do 2º Grau", campos: ["Coeficiente A", "Coeficiente B", "Coeficiente C"], id: "btnEquacao2Grau" },
             areaPerimetro: { titulo: "Área e Perímetro de Figuras Geométricas", campos: ["Base", "Altura", "Raio (se for círculo)"], id: "btnAreaPerimetro" },
@@ -38,6 +41,7 @@ export class TempletesController{
             const templeteCalculo = templetes.gerarTemplate(titulo, campos, id);
             containerExibirCalculo.appendChild(templeteCalculo)
 
+            new TempeltesMedidas();
             new RealizarCalculos();
         } else {
             containerExibirCalculo.innerHTML = "<h4>Por Favor escolha um cálculo válido</h4>";
