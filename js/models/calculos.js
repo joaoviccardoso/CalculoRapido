@@ -165,4 +165,58 @@ export class Calculos{
 
         return calculosResicao.calcularRescisao(salarioBruto, saldoFgts, dataInicial, dataFinal, tipoDeDemissao, avisoPrevio, feriasVencidas);
     }
+
+    consumoEnergia(valores){
+        const potenciaEmWatts = valores[0];
+        const horasDeUsoPorDia = valores[1];
+        const DiasDeUso = valores[2];
+        const valorKwh = valores[3];
+
+        let potenciaEmKw = potenciaEmWatts / 1000;
+        let consumoDiario = potenciaEmKw * horasDeUsoPorDia;
+        let consumoMensal = consumoDiario * DiasDeUso;
+        let custoMensal = consumoMensal * valorKwh;
+        console.log("potencia em kw:", potenciaEmKw);
+        console.log("consumo diario:", consumoDiario);
+        console.log("consumo mensal:", consumoMensal);
+        console.log("custo de consumo:", custoMensal);
+
+        return custoMensal;
+    }
+
+    conversaoMoedas(valores){
+        const valor1 = (valores[0]);
+        const valor2 = (valores[1]);
+        const valor3 = valores[2];
+    }
+
+    conversaoMedidas(valores){
+        const valor1 = (valores[0]);
+        const valor2 = (valores[1]);
+        const valor3 = valores[2];
+    }
+
+    equacao1Grau(valores){
+        const valor1 = (valores[0]);
+        const valor2 = (valores[1]);
+        const valor3 = valores[2];
+    }
+
+    equacao2Grau(valores){
+        const valor1 = (valores[0]);
+        const valor2 = (valores[1]);
+        const valor3 = valores[2];
+    }
+
+    areaPerimetro(valores){
+        const valor1 = (valores[0]);
+        const valor2 = (valores[1]);
+        const valor3 = valores[2];
+    }
+
+    regraTresComposta(valores){
+        const valor1 = (valores[0]);
+        const valor2 = (valores[1]);
+        const valor3 = valores[2];
+    }
 }

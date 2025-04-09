@@ -63,7 +63,28 @@ export class RealizarCalculos{
                 break   
             case "btnRescisaoTrabalhista":
                 resposta = this.calculos.rescisaoTrabalhista(valores)
-                break      
+                break
+            case "btnConsumoEnergia":
+                resposta = this.calculos.consumoEnergia(valores)
+                break
+            case "btnConversaoMoedas":
+                resposta = this.calculos.conversaoMoedas(valores)
+                break
+            case "btnConversaoMedidas":
+                resposta = this.calculos.conversaoMedidas(valores)
+                break
+            case "btnEquacao1Grau":
+                resposta = this.calculos.equacao1Grau(valores)
+                break
+            case "btnEquacao2Grau":
+                resposta = this.calculos.equacao2Grau(valores)
+                break
+            case "btnAreaPerimetro":
+                resposta = this.calculos.areaPerimetro(valores)
+                break
+            case "btnRegraTresComposta":
+                resposta = this.calculos.regraTresComposta(valores)
+                break                          
             default:
                 console.warn("Operação não reconhecida!");
                 return;
