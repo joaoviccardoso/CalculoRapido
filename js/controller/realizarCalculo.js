@@ -2,7 +2,6 @@ import { Calculos } from "../models/calculos.js";
 
 export class RealizarCalculos{
     constructor(){
-        this.inputs = Array.from(document.querySelectorAll(".inputs-templete"));
         this.btnEnviar = document.querySelector(".btn-realizar-calcular");
 
         this.calculos = new Calculos();
@@ -99,6 +98,8 @@ export class RealizarCalculos{
     }
 
     pegarInputs(){
+        this.inputs = Array.from(document.querySelectorAll(".inputs-templete"));
+        console.log(this.inputs)
         return this.inputs.map(input => input.value || 0);
     }
 

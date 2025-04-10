@@ -1,5 +1,5 @@
 import { Templetes } from "../view/templetes.js";
-import { TempeltesMedidas } from "../view/templetesMedidas.js";
+import { MedidasController } from "./medidasController.js";
 import { RealizarCalculos } from "./realizarCalculo.js";
 
 export class TempletesController{
@@ -41,7 +41,7 @@ export class TempletesController{
             const templeteCalculo = templetes.gerarTemplate(titulo, campos, id);
             containerExibirCalculo.appendChild(templeteCalculo)
 
-            new TempeltesMedidas();
+            new MedidasController();
             new RealizarCalculos();
         } else {
             containerExibirCalculo.innerHTML = "<h4>Por Favor escolha um cálculo válido</h4>";

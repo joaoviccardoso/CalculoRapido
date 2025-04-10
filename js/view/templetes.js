@@ -76,7 +76,7 @@ export class Templetes {
 
     templeteTipodeConversao(campo){
         return `
-            <label>${campo}
+            <label class="label-select-conversao">${campo}
                 <select class="inputs-templete">
                     <option value="escolha">Escolha um Valor</option>
                     <option value="comprimento">Comprimento</option>
@@ -91,6 +91,4 @@ export class Templetes {
     templeteDatas(campo){
        return `<label>${campo}<input type="date" class="inputs-templete"></label>`;
     }
-
-
 }

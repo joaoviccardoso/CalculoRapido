@@ -185,15 +185,18 @@ export class Calculos{
     }
 
     conversaoMoedas(valores){
-        const valor1 = (valores[0]);
-        const valor2 = (valores[1]);
+        const valor1 = valores[0];
+        const valor2 = valores[1];
         const valor3 = valores[2];
     }
 
     conversaoMedidas(valores){
-        const valor1 = (valores[0]);
-        const valor2 = (valores[1]);
+        const valor1 = valores[0];
+        const valor2 = valores[1];
         const valor3 = valores[2];
+        const valor4 = valores[3];
+
+        console.log(valor1, valor2, valor3, valor4)
     }
 
     equacao1Grau(valores){
