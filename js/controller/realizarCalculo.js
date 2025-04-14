@@ -99,7 +99,6 @@ export class RealizarCalculos{
 
     pegarInputs(){
         this.inputs = Array.from(document.querySelectorAll(".inputs-templete"));
-        console.log(this.inputs)
         return this.inputs.map(input => input.value || 0);
     }
 

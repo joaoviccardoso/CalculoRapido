@@ -3,6 +3,7 @@ import { TempeltesMedidas } from "../view/templetesMedidas.js";
 export class MedidasController {
     constructor(){
         this.containerInput = document.querySelector(".container-templete-inputs");
+        this.botaoConversao = document.querySelector(".label-select-conversao");
 
         this.templeteMedidas = new TempeltesMedidas()
         this.selecionado()
@@ -15,6 +16,7 @@ export class MedidasController {
 
     pegarValor(){
         let tipoDeConversao = this.inputTipo.value
+        this.botaoConversao.remove();
         console.log(tipoDeConversao)
         let templete;
         switch(tipoDeConversao){
@@ -35,5 +37,5 @@ export class MedidasController {
                 return;
         }
         this.containerInput.innerHTML += templete;
-    }  
+    } 
 }
