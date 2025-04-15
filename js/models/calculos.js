@@ -1,5 +1,7 @@
 import { CalculoIrEInss } from "./calculosIrInss.js";
 import { CalculosResicao } from "./calculosResicao.js";
+import { CalculosConversaoModels } from "./conversaoModels.js";
+import { GeometricaCalculos } from "./geometricaCalculos.js";
 
 export class Calculos{
     soma(valores){
@@ -191,30 +193,60 @@ export class Calculos{
     }
 
     conversaoMedidas(valores){
-        const valor1 = valores[0];
-        const valor2 = valores[1];
-        const valor3 = valores[2];
-        const valor4 = valores[3];
-
-        console.log(valor1, valor2, valor3, valor4)
+        const calculosConversao = new CalculosConversaoModels()
+        const valor = valores[0];
+        const de = valores[1];
+        const para = valores[2];
+        
+        return calculosConversao.chamarCalculoConversao(valor,de,para)
+        
     }
 
     equacao1Grau(valores){
-        const valor1 = (valores[0]);
-        const valor2 = (valores[1]);
-        const valor3 = valores[2];
+        const coeficienteA= valores[0];
+        const coeficienteB = valores[1];
+
+        if (coeficienteA === 0) {
+            alert("Isso não é uma equação do 1º grau!");
+          } else {
+            return -coeficienteB / coeficienteA;
+          }
     }
 
     equacao2Grau(valores){
-        const valor1 = (valores[0]);
-        const valor2 = (valores[1]);
-        const valor3 = valores[2];
+        const coeficienteA = valores[0];
+        const coeficienteB = valores[1];
+        const coeficienteC = valores[2];
+
+        const delta = coeficienteB * coeficienteB - 4 * coeficienteA * coeficienteC;
+
+        console.log(`Delta: ${delta}`);
+
+        if (delta < 0) {
+            return "A equação não possui raízes reais.";
+        }
+
+        const raiz1 = (-coeficienteB + Math.sqrt(delta)) / (2 * coeficienteA);
+        const raiz2 = (-coeficienteB - Math.sqrt(delta)) / (2 * coeficienteA);
+
+        return `As raízes da equação são: ${raiz1}, ${raiz2}`;
     }
 
     areaPerimetro(valores){
-        const valor1 = (valores[0]);
-        const valor2 = (valores[1]);
-        const valor3 = valores[2];
+        const calculoGeometrica = new GeometricaCalculos();
+        const tipoDeEquacao = document.querySelector(".tipo-de-equacao").textContent.trim();
+        console.log(tipoDeEquacao)
+        if(tipoDeEquacao === "quadrado"){
+            return calculoGeometrica.calculoQuadrado(valores);
+        }else if(tipoDeEquacao === "retangulo"){
+            return calculoGeometrica.calculoRentangulo(valores);
+        }else if(tipoDeEquacao === "circulo"){
+            return calculoGeometrica.calculoCirculo(valores);
+        }else if(tipoDeEquacao === "triangulo"){
+            return calculoGeometrica.calculoTrianculo(valores);
+        } else{
+            alert("erro para calcular");
+        }
     }
 
     regraTresComposta(valores){

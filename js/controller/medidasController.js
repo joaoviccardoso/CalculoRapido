@@ -1,41 +1,67 @@
+import { TempleteGeometrica } from "../view/templetesGeometrica.js";
 import { TempeltesMedidas } from "../view/templetesMedidas.js";
 
 export class MedidasController {
     constructor(){
         this.containerInput = document.querySelector(".container-templete-inputs");
-        this.botaoConversao = document.querySelector(".label-select-conversao");
-
-        this.templeteMedidas = new TempeltesMedidas()
+    
+        this.templeteGeometrica = new TempleteGeometrica();
+        this.templeteMedidas = new TempeltesMedidas();
         this.selecionado()
     }
 
     selecionado(){
         this.inputTipo = document.querySelector(".inputs-templete");
+        console.log(this.inputTipo)
         this.inputTipo.addEventListener("change", () => this.pegarValor())
     }
 
     pegarValor(){
-        let tipoDeConversao = this.inputTipo.value
+        this.botaoConversao = document.querySelector(".label-select-conversao");
+        let formadoInputTemplete = this.inputTipo.value
+        let inputId = this.inputTipo.id;
         this.botaoConversao.remove();
-        console.log(tipoDeConversao)
+        console.log(formadoInputTemplete)
         let templete;
-        switch(tipoDeConversao){
-            case "comprimento":
-                templete = this.templeteMedidas.comprimento(tipoDeConversao);
-                break
-            case "peso/massa":
-                templete = this.templeteMedidas.pesoMassa(tipoDeConversao);
-                break  
-            case "volume":
-                templete = this.templeteMedidas.volume(tipoDeConversao);
-                break
-            case "temperatura":
-                templete = this.templeteMedidas.temperatura(tipoDeConversao);
-                break  
-            default:
-                console.warn("Operação não reconhecida!");
-                return;
+
+        if(inputId === "conversao"){
+            switch(formadoInputTemplete){
+                case "comprimento":
+                    templete = this.templeteMedidas.comprimento(formadoInputTemplete);
+                    break
+                case "peso/massa":
+                    templete = this.templeteMedidas.pesoMassa(formadoInputTemplete);
+                    break  
+                case "volume":
+                    templete = this.templeteMedidas.volume(formadoInputTemplete);
+                    break
+                case "temperatura":
+                    templete = this.templeteMedidas.temperatura(formadoInputTemplete);
+                    break  
+                default:
+                    console.warn("Operação não reconhecida!");
+                    return;
+            }
+        } else if(inputId === "geometrica"){
+            switch(formadoInputTemplete){
+                case "quadrado":
+                    templete = this.templeteGeometrica.quadrado(formadoInputTemplete);
+                    break
+                case "retangulo":
+                    templete = this.templeteGeometrica.retangulo(formadoInputTemplete);
+                    break  
+                case "circulo":
+                    templete = this.templeteGeometrica.circulo(formadoInputTemplete);
+                    break
+                case "triangulo":
+                    templete = this.templeteGeometrica.triangulo(formadoInputTemplete);
+                    break  
+                default:
+                    console.warn("Operação não reconhecida!");
+                    return;
+            }
         }
+        
         this.containerInput.innerHTML += templete;
     } 
 }

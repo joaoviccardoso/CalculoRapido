@@ -26,12 +26,12 @@ export class TempletesController{
             rescisaoTrabalhista: { titulo: "Rescisão Trabalhista", campos: ["Salário Base", "Saldo FGTS" , "Data de Início", "Data Final" , "Tipo de Rescisão", "Aviso Previo", "Ferias Vencidas"], id: "btnRescisaoTrabalhista" },
             consumoEnergia: { titulo: "Cálculo de Consumo de Energia", campos: ["Potência (W)", "Horas de uso", "Dias no mês", "Preço KWH"], id: "btnConsumoEnergia" },
             conversaoMoedas: { titulo: "Conversão de Moedas", campos: ["Valor em moeda A", "Cotação"], id: "btnConversaoMoedas" },
-
             conversaoMedidas: { titulo: "Conversão de Medidas", campos: ["Tipo De Conversão"], id: "btnConversaoMedidas" },
-
             equacao1grau: { titulo: "Equação do 1º Grau", campos: ["Coeficiente A", "Coeficiente B"], id: "btnEquacao1Grau" },
             equacao2grau: { titulo: "Equação do 2º Grau", campos: ["Coeficiente A", "Coeficiente B", "Coeficiente C"], id: "btnEquacao2Grau" },
-            areaPerimetro: { titulo: "Área e Perímetro de Figuras Geométricas", campos: ["Base", "Altura", "Raio (se for círculo)"], id: "btnAreaPerimetro" },
+
+            areaPerimetro: { titulo: "Área e Perímetro de Figuras Geométricas", campos: ["Tipo de Forma Geométricas"], id: "btnAreaPerimetro" },
+
             regraTresComposta: { titulo: "Regra de Três Composta", campos: ["Valor 1", "Valor 2", "Valor 3", "X"], id: "btnRegraTresComposta" }
         };        
 

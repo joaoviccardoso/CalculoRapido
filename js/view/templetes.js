@@ -9,6 +9,8 @@ export class Templetes {
                 return this.templeteFeriasVencidas(campo)
             }else if (titulo === "Conversão de Medidas" || campo === "Tipo De Conversão"){
                 return this.templeteTipodeConversao(campo)
+            }else if (campo === "Tipo de Forma Geométricas"){
+                return this.templeteAreaGeometricas(campo)
             }else if (campo === "Data de Início" || campo === "Data Final"){
                 return this.templeteDatas(campo)
             }else {
@@ -77,12 +79,26 @@ export class Templetes {
     templeteTipodeConversao(campo){
         return `
             <label class="label-select-conversao">${campo}
-                <select class="inputs-templete">
+                <select class="inputs-templete" id="conversao">
                     <option value="escolha">Escolha um Valor</option>
                     <option value="comprimento">Comprimento</option>
                     <option value="peso/massa">Peso/Massa</option>
                     <option value="volume">Volume</option>
                     <option value="temperatura">Temperatura</option>
+                </select>
+            </label>
+                `;
+    }
+
+    templeteAreaGeometricas(campo){
+        return `
+            <label class="label-select-conversao">${campo}
+                <select class="inputs-templete" id="geometrica">
+                    <option value="">Escolha um valor</option>
+                    <option value="quadrado">Quadrado</option>
+                    <option value="retangulo">Retângulo</option>
+                    <option value="circulo">Círculo</option>
+                    <option value="triangulo">Triângulo</option>
                 </select>
             </label>
                 `;

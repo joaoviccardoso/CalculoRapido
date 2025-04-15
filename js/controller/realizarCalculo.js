@@ -8,6 +8,10 @@ export class RealizarCalculos{
         this.eventoDeclick();
     }
 
+    eventoDeclick(){
+        this.btnEnviar.addEventListener("click", () => this.pegarValores())
+    }
+
     pegarValores(){
         const valores = this.pegarInputs();
         const idBtn = this.pegarIdBtn();
@@ -91,10 +95,6 @@ export class RealizarCalculos{
 
        const containerResposta = this.pegarContainerResposta()
        containerResposta.innerHTML = resposta;
-    }
-
-    eventoDeclick(){
-        this.btnEnviar.addEventListener("click", () => this.pegarValores())
     }
 
     pegarInputs(){
