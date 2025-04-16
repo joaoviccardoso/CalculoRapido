@@ -1,4 +1,4 @@
-import { InputsTempletes } from "./InputsTempletes.js";
+import { InputsTempletes } from "./templetes/InputsTempletes.js";
 
 let templetesInputs = new InputsTempletes()
 

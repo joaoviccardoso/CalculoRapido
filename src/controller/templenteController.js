@@ -1,8 +1,8 @@
-import { TempletesContainerCalculo } from "../view/templetesCalculos.js";
+import { TempletesContainerCalculo } from "../view/templetes/templetesCalculos.js";
 import { MedidasController } from "./medidasController.js";
 import { RealizarCalculos } from "./realizarCalculo.js";
 import { regrasDeTemplate } from "../view/regrasTempletes.js";
-import { InputsTempletes } from "../view/InputsTempletes.js";
+import { InputsTempletes } from "../view/templetes/InputsTempletes.js";
 
 
 export class TempletesController{

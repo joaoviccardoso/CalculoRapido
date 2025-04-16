@@ -1,5 +1,5 @@
-import { TempleteGeometrica } from "../view/templetesGeometrica.js";
-import { TempeltesMedidas } from "../view/templetesMedidas.js";
+import { TempleteGeometrica } from "../view/templetes/templetesGeometrica.js";
+import { TempeltesMedidas } from "../view/templetes/templetesMedidas.js";
 
 export class MedidasController {
     constructor(){
