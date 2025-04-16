@@ -1,10 +1,17 @@
-import { Templetes } from "../view/templetes.js";
+import { TempletesContainerCalculo } from "../view/templetesCalculos.js";
 import { MedidasController } from "./medidasController.js";
 import { RealizarCalculos } from "./realizarCalculo.js";
+import { regrasDeTemplate } from "../view/regrasTempletes.js";
+import { InputsTempletes } from "../view/InputsTempletes.js";
+
 
 export class TempletesController{
+    constructor(){
+        this.templeteCalculo = new TempletesContainerCalculo();
+        this.regras = regrasDeTemplate(InputsTempletes);
+    }
+
     exibirCalculos(idDoBtnCalculo) {
-        const templetes = new Templetes();
         const containerExibirCalculo = document.querySelector(".container-calculo");
         containerExibirCalculo.innerHTML = "";
 
@@ -29,16 +36,13 @@ export class TempletesController{
             conversaoMedidas: { titulo: "Conversão de Medidas", campos: ["Tipo De Conversão"], id: "btnConversaoMedidas" },
             equacao1grau: { titulo: "Equação do 1º Grau", campos: ["Coeficiente A", "Coeficiente B"], id: "btnEquacao1Grau" },
             equacao2grau: { titulo: "Equação do 2º Grau", campos: ["Coeficiente A", "Coeficiente B", "Coeficiente C"], id: "btnEquacao2Grau" },
-
             areaPerimetro: { titulo: "Área e Perímetro de Figuras Geométricas", campos: ["Tipo de Forma Geométricas"], id: "btnAreaPerimetro" },
-
-            regraTresComposta: { titulo: "Regra de Três Composta", campos: ["Valor 1", "Valor 2", "Valor 3", "X"], id: "btnRegraTresComposta" }
         };        
 
         if (calculos[idDoBtnCalculo]) {
             const { titulo, campos, id} = calculos[idDoBtnCalculo];
 
-            const templeteCalculo = templetes.gerarTemplate(titulo, campos, id);
+            const templeteCalculo = this.gerarTemplate(titulo, campos, id);
             containerExibirCalculo.appendChild(templeteCalculo)
 
             new MedidasController();
@@ -46,5 +50,21 @@ export class TempletesController{
         } else {
             containerExibirCalculo.innerHTML = "<h4>Por Favor escolha um cálculo válido</h4>";
         }
+    }
+
+    gerarTemplate(titulo, campos, id) {
+
+        let inputsHTML = campos.map(campo => {
+
+            const regra = this.regras.find(regra => regra.condicao(titulo, campo));
+            
+            if (regra) {
+                return regra.template(campo);
+            }
+            return `<label>${campo}<input type="number" class="inputs-templete" placeholder="${campo}"></label>`;
+        }).join("");
+        console.log(this.templeteCalculo)
+
+        return this.templeteCalculo.templeteCalculos(inputsHTML, titulo, id)
     }
 }

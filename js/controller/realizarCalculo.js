@@ -84,10 +84,7 @@ export class RealizarCalculos{
                 break
             case "btnAreaPerimetro":
                 resposta = this.calculos.areaPerimetro(valores)
-                break
-            case "btnRegraTresComposta":
-                resposta = this.calculos.regraTresComposta(valores)
-                break                          
+                break                         
             default:
                 console.warn("Operação não reconhecida!");
                 return;
