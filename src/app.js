@@ -1,3 +1,4 @@
+import { api } from "./api/apiMoedas.js";
 import { TempletesController } from "./controller/templenteController.js";
 
 const btnsCalculos = document.querySelectorAll(".btn-escolher-calculo");
@@ -10,4 +11,6 @@ btnsCalculos.forEach(btnCalculo => {
     })
 });
 
+
+api.getApi("USD", "BRL")
 
