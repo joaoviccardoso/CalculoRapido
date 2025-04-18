@@ -1,3 +1,4 @@
+import { api } from "../api/apiMoedas.js";
 import { CalculoIrEInss } from "./calculosIrInss.js";
 import { CalculosResicao } from "./calculosResicao.js";
 import { CalculosConversaoModels } from "./conversaoModels.js";
@@ -186,10 +187,16 @@ export class Calculos{
         return custoMensal;
     }
 
-    conversaoMoedas(valores){
-        const valor1 = valores[0];
-        const valor2 = valores[1];
-        const valor3 = valores[2];
+    async conversaoMoedas(valores){
+        const valor = Number(valores[0]);
+        const de = valores[1];
+        const para = valores[2];
+
+        console.log(valor, de, para);
+        const cotacao = await api.getApi(de,para);
+        const valorFinal = Number(valor * cotacao);
+        console.log(valorFinal, cotacao)
+        return valorFinal
     }
 
     conversaoMedidas(valores){

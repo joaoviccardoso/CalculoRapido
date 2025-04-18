@@ -64,6 +64,22 @@ export class InputsTempletes{
                 `;
     }
 
+    templeteConversaoMoedas(campo){
+        return `
+        <label class="label-select-conversao">${campo}
+            <select class="inputs-templete" id="conversao">
+                <option value="escolha">Escolha um Valor</option>
+                <option value="USD">Dólar Americano (USD)</option>
+                <option value="EUR">Euro (EUR)</option>
+                <option value="GBP">Libra Esterlina (GBP)</option>
+                <option value="BTC">Bitcoin (BTC)</option>
+                <option value="ARS">Peso Argentino (ARS)</option>
+                <option value="BRL">Real Brasileiro (BRL)</option>
+            </select>
+        </label>
+            `;
+    }
+
     templeteDatas(campo){
        return `<label>${campo}<input type="date" class="inputs-templete"></label>`;
     }

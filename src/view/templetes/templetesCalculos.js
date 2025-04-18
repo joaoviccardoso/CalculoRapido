@@ -4,7 +4,6 @@ export class TempletesContainerCalculo {
     templeteCalculos(inputsHTML, titulo, id){
         const container = document.createElement("div");
         container.classList.add("container-templete-calculos")
-        console.log("certo")
         container.innerHTML = `
                 <h2 class="texto-introducao">${titulo}</h2>
                 <div class="container-templete-inputs">

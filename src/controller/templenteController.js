@@ -32,7 +32,9 @@ export class TempletesController{
             horaExtra: { titulo: "Hora Extra", campos: ["Salário Hora", "Horas Extras"], id: "btnHoraExtra" },
             rescisaoTrabalhista: { titulo: "Rescisão Trabalhista", campos: ["Salário Base", "Saldo FGTS" , "Data de Início", "Data Final" , "Tipo de Rescisão", "Aviso Previo", "Ferias Vencidas"], id: "btnRescisaoTrabalhista" },
             consumoEnergia: { titulo: "Cálculo de Consumo de Energia", campos: ["Potência (W)", "Horas de uso", "Dias no mês", "Preço KWH"], id: "btnConsumoEnergia" },
-            conversaoMoedas: { titulo: "Conversão de Moedas", campos: ["Valor em moeda A", "Cotação"], id: "btnConversaoMoedas" },
+
+            conversaoMoedas: { titulo: "Conversão de Moedas", campos: ["Valor em moeda", "Converter de", "Para"], id: "btnConversaoMoedas" },
+
             conversaoMedidas: { titulo: "Conversão de Medidas", campos: ["Tipo De Conversão"], id: "btnConversaoMedidas" },
             equacao1grau: { titulo: "Equação do 1º Grau", campos: ["Coeficiente A", "Coeficiente B"], id: "btnEquacao1Grau" },
             equacao2grau: { titulo: "Equação do 2º Grau", campos: ["Coeficiente A", "Coeficiente B", "Coeficiente C"], id: "btnEquacao2Grau" },
@@ -63,7 +65,7 @@ export class TempletesController{
             }
             return `<label>${campo}<input type="number" class="inputs-templete" placeholder="${campo}"></label>`;
         }).join("");
-        console.log(this.templeteCalculo)
+        
 
         return this.templeteCalculo.templeteCalculos(inputsHTML, titulo, id)
     }

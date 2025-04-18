@@ -26,5 +26,9 @@ export const regrasDeTemplate = () => [
     {
         condicao: (titulo, campo) => campo === "Data de Início" || campo === "Data Final",
         template: (campo) => templetesInputs.templeteDatas(campo)
-    }
+    },
+    {
+        condicao: (titulo, campo) => campo === "Converter de" || campo === "Para",
+        template: (campo) => templetesInputs.templeteConversaoMoedas(campo)
+    },
 ];

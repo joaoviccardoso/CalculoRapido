@@ -5,7 +5,6 @@ export const api = {
         const resposta = await api.json();
         const chave = `${de}${para}`;
         const cotacao = resposta[chave].bid;
-        console.log(resposta);
-        console.log(cotacao)
+        return cotacao;
     }
 }

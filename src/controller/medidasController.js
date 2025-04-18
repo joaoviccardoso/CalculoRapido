@@ -12,8 +12,11 @@ export class MedidasController {
 
     selecionado(){
         this.inputTipo = document.querySelector(".inputs-templete");
-        console.log(this.inputTipo)
-        this.inputTipo.addEventListener("change", () => this.pegarValor())
+        if(this.inputTipo.id === "conversao" || this.inputTipo.id === "geometrica"){
+            this.inputTipo.addEventListener("change", () => this.pegarValor())
+        } else {
+            return
+        }
     }
 
     pegarValor(){

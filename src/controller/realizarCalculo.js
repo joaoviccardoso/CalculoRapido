@@ -18,7 +18,7 @@ export class RealizarCalculos{
         this.chamarCalculo(valores, idBtn)
     }
 
-    chamarCalculo(valores, idBtn){
+    async chamarCalculo(valores, idBtn){
         let resposta
 
         switch(idBtn){
@@ -71,7 +71,7 @@ export class RealizarCalculos{
                 resposta = this.calculos.consumoEnergia(valores)
                 break
             case "btnConversaoMoedas":
-                resposta = this.calculos.conversaoMoedas(valores)
+                resposta = await this.calculos.conversaoMoedas(valores)
                 break
             case "btnConversaoMedidas":
                 resposta = this.calculos.conversaoMedidas(valores)
