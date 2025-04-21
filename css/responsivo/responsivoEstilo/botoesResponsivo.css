@@ -21,4 +21,9 @@
         padding: 2px 2px;
         font-size: .7rem;
     }
+
+    .select-padrao {
+        width: 100%;
+        max-width: 300px;
+      }
 }

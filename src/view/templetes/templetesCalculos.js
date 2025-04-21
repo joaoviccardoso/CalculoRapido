@@ -1,3 +1,4 @@
+import { formatarTexto } from "../../utilidades/formatarTexto.js";
 
 export class TempletesContainerCalculo {
 
@@ -6,7 +7,7 @@ export class TempletesContainerCalculo {
         container.classList.add("container-templete-calculos")
         container.innerHTML = `
                 <h2 class="texto-introducao">${titulo}</h2>
-                <div class="container-templete-inputs">
+                <div class="container-templete-inputs ${formatarTexto(titulo)}">
                     ${inputsHTML}
                 </div>
                 <div class="container-templete-btns">

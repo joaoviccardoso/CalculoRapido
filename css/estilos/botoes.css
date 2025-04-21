@@ -91,7 +91,7 @@
 }
 
 .inputs-templete{
-    width: 100%;
+    width: 270px;
     padding: 10px 15px;
     border: 1px solid #ddd;
     border-radius: 4px;
@@ -104,3 +104,28 @@
     box-shadow: 0 0 5px rgba(55, 83, 241, 0.5);
     outline: none;
 }
+
+/*Selects*/
+
+.select-padrao{
+    width: 270px;
+    padding: 10px 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #fff;
+    color: #333;
+    outline: none;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    transition: border-color 0.3s, box-shadow 0.3s;
+    appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="5"><polygon points="0,0 10,0 5,5" style="fill:%23333;"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 10px 5px;
+}
+
+.select-padrao:focus {
+    border-color: #2c8be7;
+    box-shadow: 0 0 0 2px rgba(44, 139, 231, 0.2);
+  }

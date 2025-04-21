@@ -43,6 +43,7 @@
     font-size: 24px;
     color: var(--color-destacar-letra);
     margin-top: 20px;
+    
 }
 
 .lista-uso li{
@@ -52,6 +53,7 @@
 }
 
 .container-templete-calculos{
+    max-width: 860px;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -66,3 +68,4 @@
     display: flex;
     gap: 1rem;
 }
+
