@@ -1,6 +1,6 @@
 @import url(../estilos/color.css);
 
-.body{
+body{
     display: grid;
     grid-template-rows: auto auto auto;
     grid-template-columns:auto;

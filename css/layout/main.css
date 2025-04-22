@@ -1,5 +1,9 @@
 @import url(../estilos/color.css);
 
+.container-btn-celular{
+    display: none;
+}
+
 .calculoSimples{
     display: flex;
     flex-direction: row;
@@ -53,7 +57,7 @@
 }
 
 .container-templete-calculos{
-    max-width: 860px;
+    max-width: 1200px;
     display: flex;
     flex-direction: column;
     text-align: center;

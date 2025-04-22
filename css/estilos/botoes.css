@@ -54,7 +54,6 @@
     border: none;
     transition: background 0.5s;
     background: var(--color-botao);
-
 }
 
 .btn-escolher-calculo:hover{
@@ -94,9 +93,15 @@
     width: 270px;
     padding: 10px 15px;
     border: 1px solid #ddd;
-    border-radius: 4px;
-    margin-bottom: 8px;
+    font-size: 16px;
+    color: #333;
+    border-radius: 6px;
     transition: border-color 0.3s, box-shadow 0.3s;
+    outline: none;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    transition: border-color 0.3s, box-shadow 0.3s;
+    appearance: none;
+
 }
 
 .inputs-templete:focus{

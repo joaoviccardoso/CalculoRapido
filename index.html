@@ -88,6 +88,14 @@
     </header>
 
     <main class="conteudo-principal calculoSimples">
+      <section class="container-btn-celular">
+        <div>
+          <button class="btn btn-menu" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+            </svg></button>
+        </div>
+      </section>
       <section class="container-BtnsCalculos">
         <ul class="lista-btns-calculoSimples">
           <li><h3 class="text-center font-titulo fs-5">Calculos Simples</h3></li>
@@ -157,6 +165,44 @@
           <p class="text-end font-texto m-0 fs-6" style="color: white; display: inline-block;">Versão 1.0.0</p>
         </div>
     </footer>
+
+    <!--offcanvas-->
+    <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Offcanvas with body scrolling</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="lista-btns-calculoSimples">
+          <li><h3 class="text-center font-titulo fs-5">Calculos Simples</h3></li>
+          <li><button class="btn-escolher-calculo font-texto" data-bs-dismiss="offcanvas" aria-label="Close" id="soma">Soma</button></li>
+          <li><button class="btn-escolher-calculo font-texto" data-bs-dismiss="offcanvas" aria-label="Close" id="subtracao">Subtração</button></li>
+          <li><button class="btn-escolher-calculo font-texto" data-bs-dismiss="offcanvas" aria-label="Close" id="multiplicao">Multiplicação</button></li>
+          <li><button class="btn-escolher-calculo font-texto" data-bs-dismiss="offcanvas" aria-label="Close" id="divisao">Divisão</button></li>
+          <li><button class="btn-escolher-calculo font-texto" data-bs-dismiss="offcanvas" aria-label="Close" id="porcentagem">Porcentagem</button></li>
+          <li><button class="btn-escolher-calculo font-texto" data-bs-dismiss="offcanvas" aria-label="Close" id="regraDeTres">Regra de Três</button></li>
+          <li><button class="btn-escolher-calculo font-texto" data-bs-dismiss="offcanvas" aria-label="Close" id="mediaAritmetrica">Média Aritmética</button></li>
+          <li><h3 class="text-center font-titulo fs-5">Cálculos Financeiros</h3></li>
+          <li><button class="btn-escolher-calculo font-texto" data-bs-dismiss="offcanvas" aria-label="Close" id="jurosSimples">Juros Simples</button></li>
+          <li><button class="btn-escolher-calculo font-texto" data-bs-dismiss="offcanvas" aria-label="Close" id="jurosCompostos">Juros Compostos</button></li>
+          <li><button class="btn-escolher-calculo font-texto" data-bs-dismiss="offcanvas" aria-label="Close" id="descontoComercial">Desconto Comercial</button></li>
+          <li><button class="btn-escolher-calculo font-texto" data-bs-dismiss="offcanvas" aria-label="Close" id="calculoDeParcelasFinanciamento">Cálculo de Parcelas e Financiamentos</button></li>
+          <li><h3 class="text-center font-titulo fs-5">Cálculos Trabalhistas</h3></li>
+          <li><button class="btn-escolher-calculo font-texto" data-bs-dismiss="offcanvas" aria-label="Close" id="calculoFerias">Cálculo de Férias</button></li>
+          <li><button class="btn-escolher-calculo font-texto" data-bs-dismiss="offcanvas" aria-label="Close" id="salario">13º Salário</button></li>
+          <li><button class="btn-escolher-calculo font-texto" data-bs-dismiss="offcanvas" aria-label="Close" id="horaExtra">Hora Extra</button></li>
+          <li><button class="btn-escolher-calculo font-texto" data-bs-dismiss="offcanvas" aria-label="Close" id="rescisaoTrabalhista">Rescisão Trabalhista</button></li>
+          <li><h3 class="text-center font-titulo fs-5">Cálculos de Consumo e Utilidade</h3></li>
+          <li><button class="btn-escolher-calculo font-texto" data-bs-dismiss="offcanvas" aria-label="Close" id="consumoEnergia">Cálculo de Consumo de Energia</button></li>
+          <li><button class="btn-escolher-calculo font-texto" data-bs-dismiss="offcanvas" aria-label="Close" id="conversaoMoedas">Conversão de Moedas</button></li>
+          <li><button class="btn-escolher-calculo font-texto" data-bs-dismiss="offcanvas" aria-label="Close" id="conversaoMedidas">Conversão de Medidas (metros para centímetros, km para milhas, etc.)</button></li>
+          <li><h3 class="text-center font-titulo fs-5">Cálculos Acadêmicos</h3></li>
+          <li><button class="btn-escolher-calculo font-texto" data-bs-dismiss="offcanvas" aria-label="Close" id="equacao1grau">Equação do 1º</button></li>
+          <li><button class="btn-escolher-calculo font-texto" data-bs-dismiss="offcanvas" aria-label="Close" id="equacao2grau">Equação do 2º</button></li>
+          <li><button class="btn-escolher-calculo font-texto" data-bs-dismiss="offcanvas" aria-label="Close" id="areaPerimetro">Área e Perímetro de Figuras Geométricas</button></li>
+        </ul>
+      </div>
+    </div>
     <script type="module" src="./src/app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>

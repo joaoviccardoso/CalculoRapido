@@ -1,8 +1,55 @@
-@import url(../estilos/color.css);
+@import url(../../estilos/color.css);
 
 @media screen and (max-width: 431px) {
     .container-BtnsCalculos{
         display: none;
+    }
+
+    .dropdown{
+        display: none;
+    }
+
+    .cabecalho{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .calculoSimples{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .btn-menu{
+        background: var(--color-botao);
+    }
+
+    .container-btn-celular{
+        display: block;
+        margin-right: 1.7rem;
+        align-self: flex-end;
+    }
+
+    .container-templete-inputs{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .offcanvas-body{
+        background-color: #4A90E2;
+        height: 100%;
+    }
+
+    .offcanvas-header{
+        background-color: #4A90E2;
+    }
+
+    .lista-btns-calculoSimples{
+        height: 100vh
+    }
+
+    .btn-escolher-calculo{
+        height: 2.5rem;
     }
 }
 
@@ -11,5 +58,5 @@
 }
 
 @media screen and (max-width: 361px) {
-   
+    
 }
