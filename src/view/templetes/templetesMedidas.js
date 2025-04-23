@@ -1,10 +1,13 @@
 export class TempeltesMedidas{
     comprimento(tipoDeConversao){
         return `
-        <label class="tipo-de-conversao">${tipoDeConversao}</label>
-        <div class="input-group">
+        <label class="label-container">Unidade de Conversao ${tipoDeConversao}
             <input type="number" class="inputs-templete valor-converter" placeholder="Digite o valor">
-            <select class="inputs-templete unidade-de">
+        </label>
+
+        <div class="label-container">
+            <label class="texto-select">De</label>
+            <select class="inputs-templete select-padrao unidade-de">
                 <option value="mm">Milímetros</option>
                 <option value="cm">Centímetros</option>
                 <option value="m">Metros</option>
@@ -12,20 +15,27 @@ export class TempeltesMedidas{
             </select>
         </div>
 
-            <select class="inputs-templete unidade-para">
+        <div class="label-container">
+            <label class="texto-select">Para</label>
+            <select class="inputs-templete select-padrao unidade-para">
                 <option value="mm">Milímetros</option>
                 <option value="cm">Centímetros</option>
                 <option value="m">Metros</option>
                 <option value="km">Quilômetros</option>
-            </select>`
+            </select>
+        </div>`
     }
 
     pesoMassa(tipoDeConversao){
         return `
-        <label class="tipo-de-conversao">${tipoDeConversao}</label>
-        <div class="input-group">
+
+        <label class="label-container">Unidade de Conversao ${tipoDeConversao}
             <input type="number" class="inputs-templete valor-converter" placeholder="Digite o valor">
-            <select class="inputs-templete unidade-de">
+        </label>
+
+        <div class="label-container">
+            <label class="texto-select">De</label>
+            <select class="inputs-templete select-padrao unidade-de">
                 <option value="mg">Miligramas</option>
                 <option value="g">Gramas</option>
                 <option value="kg">Quilogramas</option>
@@ -33,52 +43,67 @@ export class TempeltesMedidas{
             </select>
         </div>
 
-            <select class="inputs-templete unidade-para">
+        <div class="label-container">
+            <label class="texto-select">Para</label>
+            <select class="inputs-templete select-padrao unidade-para">
                 <option value="mg">Miligramas</option>
                 <option value="g">Gramas</option>
                 <option value="kg">Quilogramas</option>
                 <option value="t">Toneladas</option>
-            </select>`
+            </select>
+        </div>    
+            `
     }
 
     volume(tipoDeConversao){
         return `
-        <label class="tipo-de-conversao">${tipoDeConversao}</label>
-        <div class="input-group">
+        <label class="label-container">Unidade de Conversao ${tipoDeConversao}
             <input type="number" class="inputs-templete valor-converter" placeholder="Digite o valor">
-            <select class="inputs-templete unidade-de">
+        </label>
+
+        <div class="label-container">
+            <label class="texto-select">De</label>
+            <select class="inputs-templete select-padrao unidade-de">
                 <option value="ml">Mililitros</option>
                 <option value="l">Litros</option>
                 <option value="m3">Metros cúbicos</option>
                 <option value="gal">Galões</option>
             </select>
-
         </div>
-
-            <select class="inputs-templete unidade-para">
+            
+        <div class="label-container">
+            <label class="texto-select">Para</label>
+            <select class="inputs-templete select-padrao unidade-para">
                 <option value="ml">Mililitros</option>
                 <option value="l">Litros</option>
                 <option value="m3">Metros cúbicos</option>
                 <option value="gal">Galões</option>
-            </select>`
+            </select>
+        </div>`
     }
 
     temperatura(tipoDeConversao){
         return `
-        <label class="tipo-de-conversao">${tipoDeConversao}</label>
-        <div class="input-group">
+        <label class="label-container">Unidade de Conversao ${tipoDeConversao}
             <input type="number" class="inputs-templete valor-converter" placeholder="Digite o valor">
-            <select class="inputs-templete unidade-de">
+        </label>
+
+        <div class="label-container">
+            <label class="texto-select">De</label>
+            <select class="inputs-templete select-padrao unidade-de">
                 <option value="c">Celsius</option>
                 <option value="f">Fahrenheit</option>
                 <option value="k">Kelvin</option>
             </select>
         </div>
-
-            <select class="inputs-templete unidade-para">
+            
+        <div class="label-container">
+            <label class="texto-select">Para</label>
+            <select class="inputs-templete select-padrao unidade-para">
                 <option value="c">Celsius</option>
                 <option value="f">Fahrenheit</option>
                 <option value="k">Kelvin</option>
-            </select>`
+            </select>
+        </div>`
     }
 }
