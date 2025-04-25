@@ -3,70 +3,70 @@ import { CalculoIrEInss } from "./calculosIrInss.js";
 import { CalculosResicao } from "./calculosResicao.js";
 import { CalculosConversaoModels } from "./conversaoModels.js";
 import { GeometricaCalculos } from "./geometricaCalculos.js";
+import { organizarValores } from "../utilidades/organizarValores.js";
 
 export class Calculos{
-    soma(valores){
-        const valor1 = Number(valores[0])
-        const valor2 = Number(valores[1])
-        return valor1 + valor2
+    constructor(valores = []){
+        const [v1 = 0, v2 = 0, v3 = 0, v4 = 0, v5 = 0] = valores;
+        this.valor1 = v1;
+        this.valor2 = v2;
+        this.valor3 = v3;
+        this.valor4 = v4;
+        this.valor5 = v5;
     }
 
-    subtracao(valores){
-        return valores.reduce((acc, num) => acc - num);
+    soma(){
+        const resuldado = Number(this.valor1) + Number(this.valor2);
+        return organizarValores("Primeiro Valor", this.valor1,"Segundo Valor", this.valor2, "Resuldado", resuldado.toFixed(2))
     }
 
-    multiplicacao(valores){
-        return valores.reduce((acc, num) => acc * num)
+    subtracao(){
+        const resuldado = Number(this.valor1) - Number(this.valor2);
+        return organizarValores("Primeiro Valor", this.valor1 ,"Segundo Valor", this.valor2, "Resuldado", resuldado.toFixed(2))
     }
 
-    divisao(valores){
-        return valores.reduce((acc, num) => acc / num)
+    multiplicacao(){
+        const resuldado = Number(this.valor1) * Number(this.valor2);
+        return organizarValores("Primeiro Valor", this.valor1 ,"Segundo Valor", this.valor2, "Resuldado", resuldado.toFixed(2))
     }
 
-    porcentagem(valores){
-        const valor = valores[0];
-        const porcentagem = valores[1];
-
-        const valorPorcentagem = porcentagem / 100;
-        return valorPorcentagem * valor
+    divisao(){
+        const resuldado = Number(this.valor1) / Number(this.valor2);
+        return organizarValores("Primeiro Valor", this.valor1 ,"Segundo Valor", this.valor2, "Resuldado", resuldado.toFixed(2))
     }
 
-    regraDeTres(valores){
-        const valor1 = valores[0];
-        const valor2 = valores[1];
-        const valor3 = valores[2];
+    porcentagem(){
+        const valorPorcentagem = Number(this.valor2) / 100;
+        const resultado = valorPorcentagem * Number(this.valor1)
+        return organizarValores("Primeiro Valor", this.valor1 ,"Segundo Valor", this.valor2, "Resuldado", resultado.toFixed(2))
+    }
 
-        const multiplicarValor2e3 = valor2 * valor3;
-        return multiplicarValor2e3 / valor1
+    regraDeTres(){
+        const multiplicarValor2e3 = Number(this.valor2) * Number(this.valor3);
+        const resultado = multiplicarValor2e3 / Number(this.valor1)
+        return organizarValores("Primeiro Valor", this.valor1 ,"Segundo Valor", this.valor2, "Terceiro Valor", this.valor3, "Resuldado", resultado.toFixed(2))
     }
 
     mediaAritmetica(valores){
-        const total = valores.reduce((acc, num) => acc + num);
-        return total / valores.length
+        const total = Number(this.valor1) + Number(this.valor2) + Number(this.valor3);
+        const resultado = total / valores.length
+        return organizarValores("Primeiro Valor", this.valor1 ,"Segundo Valor", this.valor2, "Terceiro Valor", this.valor3, "Resuldado", resultado.toFixed(2))
     }
 
-    jurosSimples(valores){
-        const capital = valores[0];
-        const taxa = valores[1];
-        const tempoMeses = valores[2];
-
-        const taxaConvertida = taxa / 100
-        return capital * taxaConvertida * tempoMeses
+    jurosSimples(){
+        const taxaConvertida = Number(this.valor2) / 100
+        const resultado = Number(this.valor1) * taxaConvertida * Number(this.valor3)
+        return organizarValores("Primeiro Valor", this.valor1 ,"Segundo Valor", this.valor2, "Terceiro Valor", this.valor3, "Resultado", resultado.toFixed(2))
     }
 
-    jurosCompostos(valores){
-        const capital = valores[0];
-        const taxa = valores[1];
-        const tempoMeses = valores[2];
-
-        const taxaDecimal = taxa / 100
+    jurosCompostos(){
+        const taxaDecimal = Number(this.valor2) / 100
         const taxaConvertida = 1 + taxaDecimal
-        const taxaElevadaPotencia = taxaConvertida ** tempoMeses;
-
-        const montante = capital * taxaElevadaPotencia;
+        const taxaElevadaPotencia = taxaConvertida **  Number(this.valor3);
+        const montante = Number(this.valor1) * taxaElevadaPotencia;
 
         console.log(montante);
-        return montante;
+        return organizarValores("Primeiro Valor", this.valor1 ,"Segundo Valor", this.valor2, "Terceiro Valor", this.valor3, "Resultado", resultado.toFixed(2))
     }
 
     descontoComercial(valores){
@@ -254,11 +254,5 @@ export class Calculos{
         } else{
             alert("erro para calcular");
         }
-    }
-
-    regraTresComposta(valores){
-        const valor1 = (valores[0]);
-        const valor2 = (valores[1]);
-        const valor3 = valores[2];
     }
 }

@@ -23,7 +23,7 @@ export class TempletesController{
             porcentagem: { titulo: "Porcentagem", campos: ["Valor", "Porcentagem"], id: "btnPorcentagem" },
             regraDeTres: { titulo: "Regra de Três", campos: ["Valor 1", "Valor 2", "Valor 3"], id: "btnRegraDeTres" },
             mediaAritmetrica: { titulo: "Média Aritmética", campos: ["Número 1", "Número 2", "Número 3"], id: "btnMediaAritmetrica" },
-            jurosSimples: { titulo: "Juros Simples", campos: ["Capital", "Taxa (%)", "Tempo em meses"], id: "btnJurosSimples" },
+            jurosSimples: { titulo: "Juros Simples", campos: ["Capital", "Taxa Anual(%)", "Tempo em anos"], id: "btnJurosSimples" },
             jurosCompostos: { titulo: "Juros Compostos", campos: ["Capital", "Taxa (%)", "Tempo em meses"], id: "btnJurosCompostos" },
             descontoComercial: { titulo: "Desconto Comercial", campos: ["Valor", "Taxa (%)"], id: "btnDescontoComercial" },
             calculoDeParcelasFinanciamento: { titulo: "Parcelas e Financiamento (Sistema Price)", campos: ["Valor", "Juros (%) Anual", "Tempo em meses"], id: "btnCalculoDeParcelasFinanciamento" },

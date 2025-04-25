@@ -1,10 +1,10 @@
 import { Calculos } from "../models/calculos.js";
+import { CalculoIrEInss } from "../models/calculosIrInss.js";
 
 export class RealizarCalculos{
     constructor(){
         this.btnEnviar = document.querySelector(".btn-realizar-calcular");
-
-        this.calculos = new Calculos();
+       
         this.eventoDeclick();
     }
 
@@ -21,78 +21,84 @@ export class RealizarCalculos{
     async chamarCalculo(valores, idBtn){
         let resposta
 
+        const calculos = new Calculos(valores)
         switch(idBtn){
             case "btnSoma":
-                resposta = this.calculos.soma(valores);
+                resposta = calculos.soma();
                 break
             case "btnSubtracao":
-                resposta = this.calculos.subtracao(valores);
+                resposta = calculos.subtracao();
                 break  
             case "btnMultiplicacao":
-                resposta = this.calculos.multiplicacao(valores);
+                resposta = calculos.multiplicacao();
                 break
             case "btnDivisao":
-                resposta = this.calculos.divisao(valores);
+                resposta = calculos.divisao();
                 break
             case "btnPorcentagem":
-                resposta = this.calculos.porcentagem(valores);
+                resposta = calculos.porcentagem();
                 break
             case "btnRegraDeTres":
-                resposta = this.calculos.regraDeTres(valores);
+                resposta = calculos.regraDeTres(valores);
                 break
             case "btnMediaAritmetrica":
-                resposta = this.calculos.mediaAritmetica(valores);
+                resposta = calculos.mediaAritmetica(valores);
                 break
             case "btnJurosSimples":
-                resposta = this.calculos.jurosSimples(valores)
+                resposta = calculos.jurosSimples(valores)
                 break  
             case "btnJurosCompostos":
-                resposta = this.calculos.jurosCompostos(valores)
+                resposta = calculos.jurosCompostos(valores)
                 break
             case "btnDescontoComercial":
-                resposta = this.calculos.descontoComercial(valores)
+                resposta = calculos.descontoComercial(valores)
                 break 
             case "btnCalculoDeParcelasFinanciamento":
-                resposta = this.calculos.calculoDeParcelasFinanciamento(valores)
+                resposta = calculos.calculoDeParcelasFinanciamento(valores)
                 break  
             case "btnCalculoFerias":
-                resposta = this.calculos.calculoFerias(valores)
+                resposta = calculos.calculoFerias(valores)
                 break
             case "btnTrezeSalario":
-                resposta = this.calculos.trezeSalario(valores)
+                resposta = calculos.trezeSalario(valores)
                 break 
             case "btnHoraExtra":
-                resposta = this.calculos.horaExtra(valores)
+                resposta = calculos.horaExtra(valores)
                 break   
             case "btnRescisaoTrabalhista":
-                resposta = this.calculos.rescisaoTrabalhista(valores)
+                resposta = calculos.rescisaoTrabalhista(valores)
                 break
             case "btnConsumoEnergia":
-                resposta = this.calculos.consumoEnergia(valores)
+                resposta = calculos.consumoEnergia(valores)
                 break
             case "btnConversaoMoedas":
-                resposta = await this.calculos.conversaoMoedas(valores)
+                resposta = await calculos.conversaoMoedas(valores)
                 break
             case "btnConversaoMedidas":
-                resposta = this.calculos.conversaoMedidas(valores)
+                resposta = calculos.conversaoMedidas(valores)
                 break
             case "btnEquacao1Grau":
-                resposta = this.calculos.equacao1Grau(valores)
+                resposta = calculos.equacao1Grau(valores)
                 break
             case "btnEquacao2Grau":
-                resposta = this.calculos.equacao2Grau(valores)
+                resposta = calculos.equacao2Grau(valores)
                 break
             case "btnAreaPerimetro":
-                resposta = this.calculos.areaPerimetro(valores)
+                resposta = calculos.areaPerimetro(valores)
                 break                         
             default:
                 console.warn("Operação não reconhecida!");
                 return;
         }
 
-       const containerResposta = this.pegarContainerResposta()
-       containerResposta.innerHTML = resposta;
-    }
+        const containerResposta = this.pegarContainerResposta()
+    
+        for (const chave in resposta) {
+            const paragrafo = document.createElement("p");
+            paragrafo.textContent = `${chave}: ${resposta[chave]}`;
+            containerResposta.appendChild(paragrafo);
+        }
+        }
 
     pegarInputs(){
         this.inputs = Array.from(document.querySelectorAll(".inputs-templete"));
