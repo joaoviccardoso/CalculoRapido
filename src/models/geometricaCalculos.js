@@ -1,34 +1,34 @@
 export class GeometricaCalculos{
-    calculoQuadrado(valores){
-        const lado = valores[0];
+    calculoQuadrado(valor1){
+        const lado = valor1;
         let area = lado * lado;
         let perimetro = 4 * lado;
         console.log(area, perimetro)
-        return area, perimetro;
+        return  {area, perimetro} ;
     }
 
-    calculoRentangulo(valores){
-        const base = valores[0];
-        const altura = valores[1];
+    calculoRentangulo(valor1, valor2){
+        const base = valor1;
+        const altura = valor2;
         let area = base * altura;
         let perimetro = 2 * (base + altura);
-        return  area, perimetro ;
+        return  {area, perimetro} ;
     }
 
-    calculoCirculo(valores){
-        const raio = valores[0];
+    calculoCirculo(valor1){
+        const raio = valor1;
         const pi = Math.PI;
         let area = pi * raio * raio;
         let perimetro = 2 * pi * raio;
-        return  area, perimetro ;
+        return  {area, perimetro} ;
     }
 
-    calculoTrianculo(valores){
-        let base = valores[0];
-        let altura = valores[1];
-        let lado1 = Number(valores[2]);
-        let lado2 = Number(valores[3]);
-        let lado3 = Number(valores[4]);
+    calculoTrianculo(valor1, valor2, valor3, valor4, valor5){
+        let base = valor1;
+        let altura = valor2;
+        let lado1 = valor3;
+        let lado2 = valor4;
+        let lado3 = valor5;
 
         let area = (base * altura) / 2;
         let perimetro = lado1 + lado2 + lado3;
@@ -44,6 +44,6 @@ export class GeometricaCalculos{
             `
         )
 
-        return  area, perimetro ;
+        return  {area, perimetro} ;
     }
 }

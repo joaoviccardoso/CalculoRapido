@@ -39,31 +39,31 @@ export class RealizarCalculos{
                 resposta = calculos.porcentagem();
                 break
             case "btnRegraDeTres":
-                resposta = calculos.regraDeTres(valores);
+                resposta = calculos.regraDeTres();
                 break
             case "btnMediaAritmetrica":
-                resposta = calculos.mediaAritmetica(valores);
+                resposta = calculos.mediaAritmetica();
                 break
             case "btnJurosSimples":
-                resposta = calculos.jurosSimples(valores)
+                resposta = calculos.jurosSimples()
                 break  
             case "btnJurosCompostos":
-                resposta = calculos.jurosCompostos(valores)
+                resposta = calculos.jurosCompostos()
                 break
             case "btnDescontoComercial":
-                resposta = calculos.descontoComercial(valores)
+                resposta = calculos.descontoComercial()
                 break 
             case "btnCalculoDeParcelasFinanciamento":
-                resposta = calculos.calculoDeParcelasFinanciamento(valores)
+                resposta = calculos.calculoDeParcelasFinanciamento()
                 break  
             case "btnCalculoFerias":
-                resposta = calculos.calculoFerias(valores)
+                resposta = calculos.calculoFerias()
                 break
             case "btnTrezeSalario":
-                resposta = calculos.trezeSalario(valores)
+                resposta = calculos.trezeSalario()
                 break 
             case "btnHoraExtra":
-                resposta = calculos.horaExtra(valores)
+                resposta = calculos.horaExtra()
                 break   
             case "btnRescisaoTrabalhista":
                 resposta = calculos.rescisaoTrabalhista(valores)
@@ -84,7 +84,7 @@ export class RealizarCalculos{
                 resposta = calculos.equacao2Grau(valores)
                 break
             case "btnAreaPerimetro":
-                resposta = calculos.areaPerimetro(valores)
+                resposta = calculos.areaPerimetro()
                 break                         
             default:
                 console.warn("Operação não reconhecida!");
