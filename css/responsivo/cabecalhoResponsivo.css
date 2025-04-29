@@ -13,6 +13,10 @@
         width: 100vw;
     }
 
+    .btn-menu-celular{
+        display: block;
+    }
+
     .nav-container-navegacao{
         display: flex;
         flex-wrap: wrap;

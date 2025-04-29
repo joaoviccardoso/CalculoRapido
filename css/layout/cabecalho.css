@@ -11,3 +11,7 @@
 .nav-container-pesquisar {
     display: flex;
 }
+
+.btn-menu-celular{
+    display: none;
+}

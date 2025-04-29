@@ -143,21 +143,6 @@ export class Calculos{
     //arrumar a operação matematica dos dias trabalhados esta funcionadondo de forma errada estou pegando os dias e os meses trabalhodo de forma errada
     rescisaoTrabalhista() {
         const calculosResicao = new CalculosResicao();
-        
-        const salarioBruto = Number(valores[0]);
-        const saldoFgts = Number(valores[1]);
-        const dataInicial = valores[2];
-        const dataFinal = valores[3];
-        const tipoDeDemissao = valores[4];
-        const avisoPrevio = valores[5];
-        const feriasVencidas = valores[6];
-
-        console.log("Salário Bruto:", salarioBruto);
-        console.log("Saldo FGTS:", saldoFgts);
-        console.log("Tipo de Demissão:", tipoDeDemissao);
-        console.log("Data inicial:", dataInicial);
-        console.log("Data inicial:", feriasVencidas);
-
         const ValorReceber = calculosResicao.calcularRescisao(Number(this.valor1), Number(this.valor2), this.valor3, this.valor4, this.valor5, this.valor6, this.valor7);
         return organizarValores("Salario Bruto", this.valor1 ,"Saldo FGTS", this.valor2, "Data Inicial", this.valor3, "Data Final",
             this.valor4 ,"Tipo de Demissão", this.valor5 , "Total a Receber",ValorReceber.toFixed(2))
@@ -217,20 +202,54 @@ export class Calculos{
         const calculoGeometrica = new GeometricaCalculos();
         const tipoDeEquacao = document.querySelector(".tipo-de-equacao").textContent.trim();
         console.log(tipoDeEquacao)
-        if(tipoDeEquacao === "quadrado"){
-            const resuldado = calculoGeometrica.calculoQuadrado(this.valor1);
-            return organizarValores("Lado", this.valor1, "Area", resuldado.area.toFixed(2),"Perimetro", resuldado.perimetro.toFixed(2) )
-        }else if(tipoDeEquacao === "retangulo"){
-            const resuldado = calculoGeometrica.calculoRentangulo(this.valor1, this.valor2);
-            return organizarValores("Base", this.valor1,"Altura", this.valor2, "Area", resuldado.area,"Perimetro", resuldado.perimetro)
-        }else if(tipoDeEquacao === "circulo"){
-            const resuldado = calculoGeometrica.calculoCirculo(this.valor1);
-            return organizarValores("Raio", this.valor1, "Area", resuldado.area,"Perimetro", resuldado.perimetro)
-        }else if(tipoDeEquacao === "triangulo"){
-            const resuldado = calculoGeometrica.calculoTrianculo(Number(this.valor1), Number(this.valor2), Number(this.valor3), Number(this.valor4), Number(this.valor5));
-            return organizarValores("Base", this.valor1,"Altura", this.valor2,"Lado 1", this.valor3,"Lado 2",this.valor4,"Lado 3", this.valor5, "Area", resuldado.area.toFixed(2),"Perimetro", resuldado.perimetro.toFixed(2))
-        } else{
-            alert("erro para calcular");
+        switch (tipoDeEquacao) {
+            case "quadrado":
+                const resultadoQuadrado = calculoGeometrica.calculoQuadrado(this.valor1);
+                return organizarValores(
+                    "Lado", this.valor1,
+                    "Area", resultadoQuadrado.area.toFixed(2),
+                    "Perimetro", resultadoQuadrado.perimetro.toFixed(2)
+                );
+        
+            case "retangulo":
+                const resultadoRetangulo = calculoGeometrica.calculoRentangulo(this.valor1, this.valor2);
+                return organizarValores(
+                    "Base", this.valor1,
+                    "Altura", this.valor2,
+                    "Area", resultadoRetangulo.area,
+                    "Perimetro", resultadoRetangulo.perimetro
+                );
+        
+            case "circulo":
+                const resultadoCirculo = calculoGeometrica.calculoCirculo(this.valor1);
+                return organizarValores(
+                    "Raio", this.valor1,
+                    "Area", resultadoCirculo.area,
+                    "Perimetro", resultadoCirculo.perimetro
+                );
+        
+            case "triangulo":
+                const resultadoTriangulo = calculoGeometrica.calculoTrianculo(
+                    Number(this.valor1),
+                    Number(this.valor2),
+                    Number(this.valor3),
+                    Number(this.valor4),
+                    Number(this.valor5)
+                );
+                return organizarValores(
+                    "Base", this.valor1,
+                    "Altura", this.valor2,
+                    "Lado 1", this.valor3,
+                    "Lado 2", this.valor4,
+                    "Lado 3", this.valor5,
+                    "Area", resultadoTriangulo.area.toFixed(2),
+                    "Perimetro", resultadoTriangulo.perimetro.toFixed(2)
+                );
+        
+            default:
+                alert("erro para calcular");
+                break;
         }
+        
     }
 }

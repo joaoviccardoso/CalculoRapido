@@ -1,12 +1,21 @@
 /*Celular*/
 @media screen and (max-width: 431px) {
     .conteudo-principal{
-        height: 87vh;
+        min-height: 87vh;
         width: 100vw;
+        overflow-y: scroll;
+    }
+
+    .container-calculo{
+        margin: 2rem 0;
+    }
+
+    .container-templete-calculos{
+        margin-top: 4rem;
     }
 
     .secao-introducao{
-        height: 50vh;
+        min-height: 50vh;
         width: 80vw;
     }
 
@@ -14,7 +23,7 @@
         display: flex;
         align-items: center;
         flex-direction: column;
-        height: 50vh;
+        min-height: 50vh;
     }
 
     .container-botoes{

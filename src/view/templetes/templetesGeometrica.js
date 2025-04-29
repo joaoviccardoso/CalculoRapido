@@ -26,7 +26,7 @@ export class TempleteGeometrica{
 
     circulo(formadoInputTemplete){
         return `
-        <div class="tipo-de-equacao label-container" style="margin: 0;">
+        <div class="label-container" style="margin: 0;">
             <h6 class="tipo-de-equacao">${formadoInputTemplete}</h6>
             <label class="label-container">Raio
                 <input type="number" class="inputs-templete" placeholder="raio">
@@ -37,7 +37,7 @@ export class TempleteGeometrica{
 
     triangulo(formadoInputTemplete){
         return `
-        <div class="tipo-de-equacao label-container" style="margin: 0;">
+        <div class="label-container" style="margin: 0;">
             <h6 class="tipo-de-equacao">${formadoInputTemplete}</h6>
             <label class="label-container">Base
                 <input type="number" class="inputs-templete" placeholder="Base">
