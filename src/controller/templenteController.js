@@ -3,6 +3,7 @@ import { MedidasController } from "./medidasController.js";
 import { RealizarCalculos } from "./realizarCalculo.js";
 import { regrasDeTemplate } from "../view/regrasTempletes.js";
 import { InputsTempletes } from "../view/templetes/InputsTempletes.js";
+import { modal } from "../utilidades/modal.js";
 
 
 export class TempletesController{
@@ -45,6 +46,8 @@ export class TempletesController{
             const templeteCalculo = this.gerarTemplate(titulo, campos, id);
             containerExibirCalculo.appendChild(templeteCalculo)
 
+            const btnComoFazer = document.querySelector(".btn-comoFazer");
+            btnComoFazer.addEventListener("click", () => modal.mostrarDialog())
             new MedidasController();
             new RealizarCalculos();
         } else {

@@ -4,6 +4,7 @@
 @import url(layout/cabecalho.css);
 @import url(estilos/botoes.css);
 @import url(estilos/color.css);
+@import url(estilos/modal.css);
 @import url(estilos/fonts.css);
 @import url(responsivo/cabecalhoResponsivo.css);
 @import url(responsivo/gridResponsivo.css);
