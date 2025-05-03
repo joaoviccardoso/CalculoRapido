@@ -1,5 +1,4 @@
 import { Calculos } from "../models/calculos.js";
-import { CalculoIrEInss } from "../models/calculosIrInss.js";
 
 export class RealizarCalculos{
     constructor(){
@@ -92,7 +91,7 @@ export class RealizarCalculos{
         }
 
         const containerResposta = this.pegarContainerResposta()
-    
+        containerResposta.innerHTML = "";
         for (const chave in resposta) {
             const paragrafo = document.createElement("p");
             paragrafo.textContent = `${chave}: ${resposta[chave]}`;

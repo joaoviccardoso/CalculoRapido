@@ -40,7 +40,7 @@ export class Calculos{
     porcentagem(){
         const valorPorcentagem = Number(this.valor2) / 100;
         const resultado = valorPorcentagem * Number(this.valor1)
-        return organizarValores("Primeiro Valor", this.valor1 ,"Segundo Valor", this.valor2, "Resuldado", resultado.toFixed(2))
+        return organizarValores("Valor R$", this.valor1 ,"Porcentagem", `${this.valor2}%`, "Resuldado", resultado.toFixed(2))
     }
 
     regraDeTres(){
@@ -49,43 +49,70 @@ export class Calculos{
         return organizarValores("Primeiro Valor", this.valor1 ,"Segundo Valor", this.valor2, "Terceiro Valor", this.valor3, "Resuldado", resultado.toFixed(2))
     }
 
-    mediaAritmetica(valores){
+    mediaAritmetica(){
         const total = Number(this.valor1) + Number(this.valor2) + Number(this.valor3);
-        const resultado = total / valores.length
+        let resultado
+        if(this.valor2 === 0 && this.valor3 === 0){
+            return alert("Coloque pelo menos dois valores para fazer a media.")
+        }else if(!Number(this.valor1) == 0 && !Number(this.valor2) == 0 && !Number(this.valor3) == 0){
+            resultado = total / 3
+        } else {
+            resultado = total / 2
+        }
+        
         return organizarValores("Primeiro Valor", this.valor1 ,"Segundo Valor", this.valor2, "Terceiro Valor", this.valor3, "Resuldado", resultado.toFixed(2))
     }
 
     jurosSimples(){
         const taxaConvertida = Number(this.valor2) / 100
         const resultado = Number(this.valor1) * taxaConvertida * Number(this.valor3)
-        return organizarValores("Primeiro Valor", this.valor1 ,"Segundo Valor", this.valor2, "Terceiro Valor", this.valor3, "Resultado", resultado.toFixed(2))
+        return organizarValores("Capital Inicial", this.valor1 ,"Taxa Anual", this.valor2, "Tempo em Anos", this.valor3, "Total em Juros", resultado.toFixed(2))
     }
 
-    //Corrigir calculo
     jurosCompostos(){
-        const taxaDecimal = Number(this.valor2) / 100
-        const taxaConvertida = 1 + taxaDecimal
-        const taxaElevadaPotencia = taxaConvertida ** Number(this.valor3);
-        const montante = Number(this.valor1) * taxaElevadaPotencia;
+        const taxaDecimalAnual = Number(this.valor2) / 100;
+        const taxaMensal = taxaDecimalAnual / 12; // converte para taxa mensal
+    
+        const montanteCapital = Number(this.valor1) * Math.pow(1 + taxaMensal, Number(this.valor3));
+        const montanteAportes = Number(this.valor4) * ((Math.pow(1 + taxaMensal, Number(this.valor3)) - 1) / taxaMensal);
+        const montanteTotal = montanteCapital + montanteAportes;
 
-        console.log(montante);
-        return organizarValores("Primeiro Valor", this.valor1 ,"Segundo Valor", this.valor2, "Terceiro Valor", this.valor3, "Resultado", montante.toFixed(2))
+        return organizarValores(
+            "Capital Inicial", this.valor1,
+            "Taxa Anual (%)", this.valor2,
+            "Tempo (meses)", this.valor3,
+            "Aporte Mensal", this.valor4,
+            "Montante Final", montanteTotal.toFixed(2))
     }
 
     descontoComercial(){
         const taxaDecimal = Number(this.valor2) / 100;
         const Desconto = Number(this.valor1) * taxaDecimal;
         const valorDesconto = Number(this.valor1) - Desconto
-        return organizarValores("Primeiro Valor", this.valor1 ,"Segundo Valor", this.valor2, "Resultado", valorDesconto.toFixed(2))
+        return organizarValores(
+            "Valor original", this.valor1 ,
+            "Desconto", this.valor2, 
+            "Valor Com Desconto", valorDesconto.toFixed(2))
     }
 
-    //corrigir o calculo
+
     calculoDeParcelasFinanciamento(){
-        let i = (Number(this.valor1) / 12) / 100;
-        let parcela = (Number(this.valor1) * i) / (1 - Math.pow(1 + i, -Number(this.valor3)));
-        return organizarValores("Primeiro Valor", this.valor1 ,"Segundo Valor", this.valor2, "Terceiro Valor", this.valor3,"Resultado", parcela.toFixed(2))
+        let valorFinanciado = Number(this.valor1) - Number(this.valor4);
+    
+        // Calculando a taxa de juros mensal
+        let i = (Number(this.valor2) / 12) / 100;
+        
+        // Calculando o valor da parcela
+        let parcela = (valorFinanciado * i) / (1 - Math.pow(1 + i, -Number(this.valor3)));
+        return organizarValores(
+            "Valor do Financiamento", this.valor1 ,
+            "Juros Anual(%)", this.valor2, 
+            "Tempo em Meses", this.valor3,
+            "Valor Entrada", this.valor4,
+            "Valor de cada parcela", parcela.toFixed(2))
     }
 
+    //corrigir o codigo se vender as ferais tem q calcular o salario das ferias com os dias que ele saio de ferias
     calculoFerias(){
         const IrOuInss = new CalculoIrEInss()
         if (Number(this.valor2) > 12) Number(this.valor2) = 12;
@@ -110,9 +137,16 @@ export class Calculos{
         
          // Valor final líquido
         let totalLiquido = totalBruto - inss - impostoDeRenda;
-        return organizarValores("Salario Bruto", this.valor1 ,"Meses Trabalhado", this.valor2, "Dias Vendidos", this.valor3, 
-        "Ferais Proporcionais" , feriasProporcionais.toFixed(2), "Adiconal 1/3", adicionalTerco.toFixed(2), 
-        "Abono Pecuniário", abonoPecuniario.toFixed(2),"INSS",inss.toFixed(2),"Imposto De Renda", impostoDeRenda.toFixed(2),"Total a Receber", totalLiquido.toFixed(2))
+        return organizarValores(
+            "Salario Bruto", this.valor1 ,
+            "Meses Trabalhado", this.valor2, 
+            "Dias Vendidos", this.valor3, 
+            "Ferais Proporcionais" , feriasProporcionais.toFixed(2), 
+            "Adiconal 1/3", adicionalTerco.toFixed(2), 
+            "Abono Pecuniário", abonoPecuniario.toFixed(2),
+            "INSS",inss.toFixed(2),
+            "Imposto De Renda", impostoDeRenda.toFixed(2),
+            "Total a Receber", totalLiquido.toFixed(2))
     }
 
     trezeSalario(){
@@ -144,8 +178,14 @@ export class Calculos{
     rescisaoTrabalhista() {
         const calculosResicao = new CalculosResicao();
         const ValorReceber = calculosResicao.calcularRescisao(Number(this.valor1), Number(this.valor2), this.valor3, this.valor4, this.valor5, this.valor6, this.valor7);
-        return organizarValores("Salario Bruto", this.valor1 ,"Saldo FGTS", this.valor2, "Data Inicial", this.valor3, "Data Final",
-            this.valor4 ,"Tipo de Demissão", this.valor5 , "Total a Receber",ValorReceber.toFixed(2))
+        return organizarValores("Salario Bruto", this.valor1 ,
+                                "Saldo FGTS", this.valor2, 
+                                "Data Inicial", this.valor3, 
+                                "Data Final", this.valor4 ,
+                                "Tipo de Demissão", this.valor5 , 
+                                "Total a Receber",ValorReceber.toFixed(2)
+                            )
+                                               
     }
 
     consumoEnergia(){
@@ -158,28 +198,44 @@ export class Calculos{
         console.log("consumo mensal:", consumoMensal);
         console.log("custo de consumo:", custoMensal);
 
-        return organizarValores("Potencia em Kw", potenciaEmKw ,"Consumo Diario", consumoDiario, "Consumo Mensal", consumoMensal, "Custo Mensal" ,custoMensal.toFixed(2))
+        return organizarValores("Potencia em Kw", potenciaEmKw ,
+                                "Consumo Diario", consumoDiario, 
+                                "Consumo Mensal", consumoMensal, 
+                                "Custo Mensal" ,custoMensal.toFixed(2)
+                            )
     }
 
     async conversaoMoedas(){
         const cotacao = await api.getApi(this.valor2,this.valor3);
         const valorFinal = Number(this.valor1 * cotacao);
         console.log(valorFinal, cotacao)
-        return organizarValores("Valor Para Conversão", this.valor1 ,"De", this.valor2, "Para", this.valor3, "Valor Convertido", valorFinal.toFixed(2))
+        return organizarValores("Valor Para Conversão", this.valor1 ,
+                                "De", this.valor2, 
+                                "Para", this.valor3, 
+                                "Valor Convertido", valorFinal.toFixed(2)
+                            )
     }
 
     conversaoMedidas(){
         const calculosConversao = new CalculosConversaoModels()
         const valorConvertido = calculosConversao.chamarCalculoConversao(Number(this.valor1),this.valor2,this.valor3)
-        return organizarValores("Valor", this.valor1 ,"De", this.valor2, "Para", this.valor3, "Valor Convertido", valorConvertido.toFixed(2))
+        return organizarValores("Valor", this.valor1 ,
+                                "De", this.valor2, "Para", this.valor3, 
+                                "Valor Convertido", 
+                                valorConvertido.toFixed(2)
+                            )
     }
 
+    //forma de fazer melhoria esta aceitando apenas o calculo simples
     equacao1Grau(){
         if (Number(this.valor1) === 0) {
             alert("Isso não é uma equação do 1º grau!");
           } else {
             const resultado = -Number(this.valor2) / Number(this.valor1);
-            return organizarValores("coeficiente A", this.valor1 ,"coeficienteB", this.valor2,"Valor", resultado.toFixed(2))
+            return organizarValores("coeficiente A", this.valor1 ,
+                                    "coeficienteB", this.valor2,
+                                    "Valor", resultado.toFixed(2)
+                                )
           }
     }
 

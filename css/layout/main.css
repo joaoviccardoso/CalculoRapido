@@ -73,3 +73,22 @@
     gap: 1rem;
 }
 
+.container-flex-resultado{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.container-templete-resultado{
+    width: 50%;
+    background-color: #f0f8ff; /* azul claro */
+    border: 2px solid #007bff; /* azul vibrante */
+    border-radius: 12px;
+    padding: 16px;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-weight: 500;
+    color: #333;
+    transition: all 0.3s ease;
+}
