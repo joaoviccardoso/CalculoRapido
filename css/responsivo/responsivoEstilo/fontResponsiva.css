@@ -13,10 +13,11 @@
     .font-tituloResponsivo{
         font-size: 2.5rem;
         margin:0;
+     
     }
 }
 
-@media screen and (max-width: 361px) {
+@media screen and (max-width: 409px) {
     .font-titulo, .font-texto{
         line-height: 1.2;
     }
@@ -27,7 +28,7 @@
     }
 
     .font-tituloResponsivo{
-        font-size: 2rem;
+        font-size: 1.9rem;
         margin: 0;
     }
 }

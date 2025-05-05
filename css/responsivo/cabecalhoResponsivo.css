@@ -23,9 +23,11 @@
         align-items: center;
         justify-content: center;
         border: none;
+        padding-top: 25px;
     }
 
     .nav-container-pesquisar {
         display: none;
     }
+
 }

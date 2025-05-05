@@ -55,6 +55,10 @@
     #myDialog{
         width: 80%;
     }
+
+    .container-templete-resultado{
+        width: 90%;
+    }
 }
 
 @media screen and (max-width: 391px) {
