@@ -12,7 +12,7 @@ export class TempletesContainerCalculo {
                 </div>
                 <div class="container-templete-btns">
                     <button class="btn-realizar-calcular" id="${id}">Calcular</button>
-                    <button class="btn-comoFazer">Como Fazer</button>
+                    <button class="btn-comoFazer" id="${formatarTexto(titulo)}">Como Fazer</button>
                 </div>
                 <div class="container-flex-resultado">
                     <div class="container-templete-resultado">

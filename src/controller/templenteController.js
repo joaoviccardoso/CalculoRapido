@@ -4,6 +4,8 @@ import { RealizarCalculos } from "./realizarCalculo.js";
 import { regrasDeTemplate } from "../view/regrasTempletes.js";
 import { InputsTempletes } from "../view/templetes/InputsTempletes.js";
 import { modal } from "../utilidades/modal.js";
+import { instrucoes } from "../api/comoFazerInfo.js";
+import { gerarTempleteInstrucao } from "../view/templetes/InstrucaoTemplete.js";
 
 
 export class TempletesController{
@@ -47,7 +49,19 @@ export class TempletesController{
             containerExibirCalculo.appendChild(templeteCalculo)
 
             const btnComoFazer = document.querySelector(".btn-comoFazer");
-            btnComoFazer.addEventListener("click", () => modal.mostrarDialog())
+            btnComoFazer.addEventListener("click", () => {
+                const containerResultado = document.querySelector(".container-templete-resultado")
+                const id = btnComoFazer.id;
+                const instrucao = instrucoes.find(item => item.id === id);
+
+                if(!instrucao){
+                    modal.mostrarDialog("Erro para realizar a função", "Erro do servidor")
+                    return
+                }
+
+                const templeteInstrucao = gerarTempleteInstrucao(instrucao);
+                containerResultado.innerHTML = templeteInstrucao;
+            })
             new MedidasController();
             new RealizarCalculos();
         } else {

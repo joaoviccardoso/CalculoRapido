@@ -1,11 +1,10 @@
 export const modal = {
-    mostrarDialog(){
+    mostrarDialog(titulo, texto){
         const dialog = document.getElementById("myDialog");
 
         dialog.innerHTML = `
-                <h2 class="avisoModal">Funcionalidade em Desenvolvimento 🛠️</h2>
-                <p class="mensagemModal">Obrigado pelo seu interesse!</p>
-                <p class="mensagemModal">Esta funcionalidade ainda não está disponível, mas estamos trabalhando duro para trazê-la até você em breve. Pedimos desculpas pelo inconveniente e agradecemos sua paciência.</p>
+                <h2 class="avisoModal">${titulo}</h2>
+                <p class="mensagemModal">${texto}</p>
                 <button class="btn-modal" id="closeDialog">Fechar</button>
             `
         

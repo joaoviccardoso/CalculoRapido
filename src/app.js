@@ -20,5 +20,3 @@ btnsEscolherCalculoHeader.forEach(btnHeader => {
         templetesController.exibirCalculos(textBtn)
     })
 });
-
-
