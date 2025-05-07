@@ -1,6 +1,6 @@
 export function gerarTempleteInstrucao(instrucao){
     return `
-        <div class="">
+        <div class="s">
             <h2>${instrucao.titulo}</h2>
             <p>${instrucao.descricao}</p>
             <ul>

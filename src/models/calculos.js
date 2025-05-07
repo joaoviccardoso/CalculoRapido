@@ -69,6 +69,7 @@ export class Calculos{
         return organizarValores("Capital Inicial", this.valor1 ,"Taxa Anual", this.valor2, "Tempo em Anos", this.valor3, "Total em Juros", resultado.toFixed(2))
     }
 
+    //Corrigir codigo 
     jurosCompostos(){
         const taxaDecimalAnual = Number(this.valor2) / 100;
         const taxaMensal = taxaDecimalAnual / 12; // converte para taxa mensal

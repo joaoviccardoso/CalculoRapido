@@ -52,6 +52,7 @@ export class TempletesController{
             btnComoFazer.addEventListener("click", () => {
                 const containerResultado = document.querySelector(".container-templete-resultado")
                 const id = btnComoFazer.id;
+                console.log(id)
                 const instrucao = instrucoes.find(item => item.id === id);
 
                 if(!instrucao){
