@@ -6,7 +6,6 @@ export class InputsTempletes{
             <div class="label-container">
             <label class="texto-select">${campo}</label>
                 <select class="inputs-templete select-padrao">
-                    <option value="Demissão de comum acordo">Demissão de comum acordo</option>
                     <option value="Dispensa sem justa causa">Dispensa sem justa causa</option>
                     <option value="Dispensa com justa causa">Dispensa com justa causa</option>
                     <option value="Pedido de demissão">Pedido de demissão</option>
@@ -23,7 +22,6 @@ export class InputsTempletes{
                     <option value="Trabalhado">Trabalhado</option>
                     <option value="descontado">descontado</option>
                     <option value="Indenizado">Indenizado</option>
-                    <option value="Pedido de demissão">Pedido de demissão</option>
                 </select>
             </div>
                 `;

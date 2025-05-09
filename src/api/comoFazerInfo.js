@@ -209,6 +209,81 @@ export const instrucoes = [
         "Importante: Descontos são aplicados apenas na segunda parcela, se houver."
       ]
     },
+
+    {
+      id: "horaextra",
+      titulo: "Como calcular Horas Extras",
+      descricao: "Horas extras são aquelas trabalhadas além da jornada normal de trabalho. No Brasil, geralmente são remuneradas com um acréscimo de 50% sobre o valor da hora normal em dias úteis, e 100% em feriados ou domingos.",
+      passos: [
+        "1. Descubra o salário mensal do trabalhador.",
+        "2. Calcule o valor da hora normal: divida o salário por 220 (carga horária mensal padrão).",
+        "3. Determine o adicional da hora extra (exemplo: 50% = 1.5 ou 100% = 2.0).",
+        "4. Multiplique o valor da hora normal pelo adicional.",
+        "5. Multiplique o valor da hora extra pela quantidade de horas extras trabalhadas.",
+        "Exemplo:",
+        "Salário: R$ 2.200",
+        "Hora normal: 2200 ÷ 220 = R$ 10",
+        "Hora extra (50%): 10 × 1.5 = R$ 15",
+        "Total por 5 horas extras: 15 × 5 = R$ 75"
+      ]
+    },
+
+    {
+      id: "rescisaotrabalhista",
+      titulo: "Como calcular Rescisão Trabalhista",
+      descricao: "A rescisão trabalhista ocorre quando o contrato de trabalho é encerrado. Os valores a serem pagos variam conforme o tipo de desligamento. Entre os principais direitos estão o saldo de salário, férias, 13º salário, aviso prévio e multa do FGTS, dependendo do caso.",
+      passos: [
+        "1. Identifique o tipo de rescisão: sem justa causa, com justa causa, pedido de demissão ou fim de contrato por prazo determinado.",
+        
+        "▶ Sem Justa Causa (empresa demite o funcionário):",
+        "- Saldo de salário (dias trabalhados no mês)",
+        "- Aviso prévio indenizado (30 dias + 3 dias por ano completo de trabalho, até 90 dias no total)",
+        "- Férias vencidas + 1/3 (se houver)",
+        "- Férias proporcionais + 1/3",
+        "- 13º salário proporcional",
+        "- Multa de 40% sobre o FGTS depositado",
+        "- Direito ao saque do FGTS e seguro-desemprego (se cumprir os requisitos)",
+    
+        "▶ Com Justa Causa:",
+        "- Saldo de salário",
+        "- Férias vencidas + 1/3 (se houver)",
+        "(Sem direito a férias proporcionais, 13º, aviso prévio, multa do FGTS ou saque do FGTS)",
+    
+        "▶ Pedido de Demissão (funcionário pede para sair):",
+        "- Saldo de salário",
+        "- Férias vencidas + 1/3 (se houver)",
+        "- Férias proporcionais + 1/3",
+        "- 13º salário proporcional",
+        "- (Sem direito à multa de 40% do FGTS nem seguro-desemprego)",
+        "- (Pode haver desconto do aviso prévio se o funcionário não cumprir)",
+    
+        "▶ Término de Contrato por Prazo Determinado:",
+        "- Saldo de salário",
+        "- Férias vencidas + 1/3 (se houver)",
+        "- Férias proporcionais + 1/3",
+        "- 13º salário proporcional",
+        "- (Se o contrato for rompido antecipadamente sem justa causa, o trabalhador tem direito à multa de 40% sobre o FGTS)",
+    
+        "▶ Como calcular o saldo de salário:",
+        "- Fórmula: (Salário ÷ 30) × dias trabalhados no mês da demissão",
+    
+        "▶ Como calcular o aviso prévio indenizado:",
+        "- Base: 30 dias",
+        "- Adicione 3 dias por ano completo de empresa",
+        "- Limite máximo: 90 dias",
+        "- Fórmula: (Salário ÷ 30) × total de dias de aviso prévio",
+    
+        "Exemplo (Demissão sem justa causa):",
+        "Salário: R$ 2.400 | Tempo de empresa: 5 anos | Trabalhou 10 dias no mês",
+        "Saldo de salário: (2400 ÷ 30) × 10 = R$ 800",
+        "Aviso prévio: 30 + (3 × 5) = 45 dias → (2400 ÷ 30) × 45 = R$ 3.600",
+        "13º proporcional (6 meses): (2400 ÷ 12) × 6 = R$ 1.200",
+        "Férias proporcionais (6 meses): (2400 ÷ 12) × 6 = R$ 1.200 + 1/3 = R$ 1.600",
+        "Multa 40% FGTS (supondo R$ 4.000 depositados): 4000 × 0.4 = R$ 1.600",
+        "Total: somar todos os valores"
+      ]
+    }
+    
     
   ];
   
