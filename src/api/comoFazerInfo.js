@@ -282,8 +282,100 @@ export const instrucoes = [
         "Multa 40% FGTS (supondo R$ 4.000 depositados): 4000 × 0.4 = R$ 1.600",
         "Total: somar todos os valores"
       ]
+    },
+    
+    {
+      id: "calculodeconsumodeenergia",
+      titulo: "Como calcular Consumo de Energia",
+      descricao: "O consumo de energia elétrica é medido em quilowatt-hora (kWh). Ele depende da potência do aparelho, do tempo de uso e da quantidade de dias que é utilizado.",
+      passos: [
+        "1. Verifique a potência do aparelho em watts (W).",
+        "2. Converta a potência para quilowatts: divida por 1.000.",
+        "3. Multiplique pela quantidade de horas que o aparelho fica ligado por dia.",
+        "4. Multiplique pelo número de dias de uso no mês.",
+        "5. Resultado: Consumo mensal em kWh.",
+        "6. Para saber o custo, multiplique o total de kWh pelo valor do kWh na sua conta de luz.",
+        "Exemplo:",
+        "Potência: 1000W = 1kW",
+        "Uso diário: 3 horas",
+        "Dias por mês: 30",
+        "Consumo: 1 × 3 × 30 = 90 kWh",
+        "Se o kWh custa R$ 0,70: 90 × 0,70 = R$ 63,00"
+      ]
+    },
+
+    {
+      id: "conversaodemoedas",
+      titulo: "Como fazer Conversão de Moedas",
+      descricao: "Converter moedas significa multiplicar o valor em uma moeda pela cotação da moeda desejada. A cotação varia diariamente.",
+      passos: [
+        "1. Verifique a cotação atual da moeda (exemplo: 1 dólar = 5,00 reais).",
+        "2. Multiplique o valor que você possui pela cotação.",
+        "3. Para conversão inversa, divida o valor pela cotação.",
+        "Exemplo 1 (de dólar para real):",
+        "US$ 50 × 5,00 = R$ 250,00",
+        "Exemplo 2 (de real para dólar):",
+        "R$ 250 ÷ 5,00 = US$ 50"
+      ]
+    },
+
+    {
+      id: "conversaodemedidas",
+      titulo: "Como fazer Conversão de Medidas (cm, m, km etc)",
+      descricao: "Para converter entre unidades de comprimento, como centímetros, metros e quilômetros, usamos fatores de multiplicação ou divisão por 10, 100 ou 1000, dependendo das unidades.",
+      passos: [
+        "1. Identifique as unidades de origem e destino (ex: cm para m, m para km etc).",
+        "2. Use os fatores de conversão adequados:",
+        "   - 1 metro = 100 centímetros",
+        "   - 1 quilômetro = 1.000 metros",
+        "3. Para converter de uma unidade menor para maior, divida.",
+        "4. Para converter de uma unidade maior para menor, multiplique.",
+        "Exemplos:",
+        "150 cm ÷ 100 = 1,5 metros",
+        "2 km × 1.000 = 2.000 metros",
+        "5 metros × 100 = 500 cm"
+      ]
+    },
+
+    {
+      id: "equacaodo1ºgrau(equacoesdotipopadrao)",
+      titulo: "Como resolver Equação do 1º Grau",
+      descricao: "Equações do 1º grau têm a forma ax + b = 0, onde 'a' e 'b' são números reais e 'x' é a incógnita. O objetivo é encontrar o valor de x que torna a equação verdadeira.",
+      passos: [
+        "1. Escreva a equação no formato ax + b = 0.",
+        "2. Isole o termo com 'x' no lado esquerdo.",
+        "3. Passe o número constante (b) para o outro lado com sinal trocado.",
+        "4. Divida ambos os lados da equação pelo valor de 'a'.",
+        "Exemplo:",
+        "Equação: 2x + 6 = 0",
+        "Passo 1: 2x = -6",
+        "Passo 2: x = -6 ÷ 2",
+        "Resultado: x = -3"
+      ]
+    },
+
+    {
+      id: "equacaodo2ºgrau",
+      titulo: "Como resolver Equação do 2º Grau",
+      descricao: "Equações do 2º grau têm a forma ax² + bx + c = 0. Para resolver, usamos a fórmula de Bhaskara.",
+      passos: [
+        "1. Identifique os coeficientes a, b e c na equação (ax² + bx + c = 0).",
+        "2. Calcule o discriminante (delta): Δ = b² - 4ac.",
+        "3. Verifique o valor de Δ:",
+        "   - Se Δ < 0: não há raízes reais.",
+        "   - Se Δ = 0: há uma raiz real (x = -b / 2a).",
+        "   - Se Δ > 0: há duas raízes reais.",
+        "4. Use a fórmula de Bhaskara: x = (-b ± √Δ) / (2a).",
+        "Exemplo:",
+        "Equação: x² - 3x + 2 = 0",
+        "a = 1, b = -3, c = 2",
+        "Δ = (-3)² - 4×1×2 = 9 - 8 = 1",
+        "x₁ = (3 + √1)/2 = 4/2 = 2",
+        "x₂ = (3 - √1)/2 = 2/2 = 1",
+        "Resultado: x = 1 ou x = 2"
+      ]
     }
-    
-    
+
+
   ];
   

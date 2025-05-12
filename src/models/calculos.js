@@ -175,7 +175,6 @@ export class Calculos{
         return organizarValores("Salario Bruto", this.valor1 ,"Horas Extras", this.valor2, "Total a Receber", valorReceber.toFixed(2))
     }
 
-    //arrumar a operação matematica dos dias trabalhados esta funcionadondo de forma errada estou pegando os dias e os meses trabalhodo de forma errada
     rescisaoTrabalhista() {
         const calculosResicao = new CalculosResicao();
         const ValorReceber = calculosResicao.calcularRescisao(Number(this.valor1), Number(this.valor2), this.valor3, this.valor4, this.valor5, this.valor6, this.valor7);
