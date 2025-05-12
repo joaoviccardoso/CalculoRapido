@@ -1,6 +1,6 @@
 @import url(color.css);
 
-.font-titulo, .font-texto{
+.font-titulo, .font-texto, .texto-instrucao{
     font-size: 2rem;
     font-family: var(--font-titulo);
     font-weight: bold;
@@ -33,4 +33,10 @@
     font-weight: 500;
     color: #333;
     margin-bottom: 6px;
+}
+
+/*fonte instrução*/
+
+.texto-instrucao{   
+    line-height: 1.2;
 }

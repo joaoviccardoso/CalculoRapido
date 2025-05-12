@@ -70,6 +70,8 @@
 
 .container-templete-inputs, .container-templete-btns{
     display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 1rem;
 }
 
@@ -81,14 +83,23 @@
 }
 
 .container-templete-resultado{
-    width: 50%;
+    width: 55%;
     background-color: #f0f8ff; /* azul claro */
     border: 2px solid #007bff; /* azul vibrante */
     border-radius: 12px;
     padding: 16px;
-    margin-top: 20px;
+    margin-top: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     font-weight: 500;
     color: #333;
     transition: all 0.3s ease;
+}
+
+.container-instrucao{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 750px;
+    max-height: 350px;
+    overflow-y: scroll;
 }

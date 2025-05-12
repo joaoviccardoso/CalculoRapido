@@ -57,7 +57,7 @@ export const instrucoes = [
       ]
     },
     {
-      id: "regrasdetres",
+      id: "regradetres",
       titulo: "Como fazer Regra de Três Simples",
       descricao: "A regra de três é usada para encontrar um valor proporcional.",
       passos: [
@@ -374,8 +374,37 @@ export const instrucoes = [
         "x₂ = (3 - √1)/2 = 2/2 = 1",
         "Resultado: x = 1 ou x = 2"
       ]
+    },
+
+    {
+      id: "areaeperimetro",
+      titulo: "Como calcular Área e Perímetro (Figuras Geométricas)",
+      descricao: "As fórmulas de área e perímetro variam conforme a figura geométrica. Veja as principais abaixo de forma simples e direta.",
+      passos: [
+        "🔷 Quadrado:",
+        "- Área: lado × lado",
+        "- Perímetro: 4 × lado",
+
+        "🔶 Retângulo:",
+        "- Área: base × altura",
+        "- Perímetro: 2 × (base + altura)",
+
+        "🔺 Triângulo:",
+        "- Área: (base × altura) ÷ 2",
+        "- Perímetro: soma dos 3 lados",
+
+        "⚪ Círculo:",
+        "- Área: π × raio²",
+        "- Perímetro (circunferência): 2 × π × raio",
+
+        "🔻 Losango:",
+        "- Área: (diagonal maior × diagonal menor) ÷ 2",
+        "- Perímetro: 4 × lado",
+
+        "🟦 Trapézio:",
+        "- Área: ((base maior + base menor) × altura) ÷ 2",
+        "- Perímetro: soma dos 4 lados"
+      ]
     }
-
-
   ];
   
