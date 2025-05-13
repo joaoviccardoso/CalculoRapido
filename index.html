@@ -16,18 +16,10 @@
 <body>
     <header class="cabecalho">
       <nav class="navbar">
-        <div class="container-fluid p-0">
+
           
           <nav class="nav-container-navegacao">
             <a href="./index.html" style="text-decoration: none;"><h1 class="font-titulo font-tituloResponsivo" style="color: white;">CálculoRápido</h1></a>
-
-            <div class="btn-menu-celular" style="margin: .8rem;">
-              <button class="btn btn-menu" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
-                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
-                  <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
-                </svg>
-              </button>
-            </div>
 
             <div class="dropdown">
               <a class="dropdown-toggle btn-cabecalho" style="text-decoration: none;" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -90,9 +82,21 @@
               </ul>
             </div>
           </nav>
-            
-          </div>
-          </nav>
+            <ul class="ul-lista-botoes-nav">
+              <li class="li-lista-container">
+                <button class="btn-menu" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
+                  ☰
+                </button>
+              </li>
+              
+
+              <li class="li-lista-container-historico">
+                <button class="btn-menu btn-historico" type="button">
+                  📖
+                </button>
+              </li>
+            </ul>
+      </nav>
     </header>
 
     <main class="conteudo-principal calculoSimples">

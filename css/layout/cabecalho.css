@@ -12,6 +12,11 @@
     display: flex;
 }
 
-.btn-menu-celular{
+.li-lista-container{
     display: none;
+}
+
+.ul-lista-botoes-nav{
+    margin: 1rem;
+    padding: 0;
 }

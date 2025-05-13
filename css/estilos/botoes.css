@@ -42,8 +42,32 @@
     border: solid 1px var(--color-backgroud);
 }
 
-/*botoes do main*/
+.btn-menu{
+  width: 50px;
+  background: linear-gradient(135deg, #2C7BE5, #1E5FA3);
+  color: white;
+  font-size: 18px;
+  border: none;
+  padding: 10px 12px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+.btn-cabecalho:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.btn-historico{
+    background: linear-gradient(135deg, #4A90E2, #2C7BE5);
+}
+
+/*botoes do main*/
 .botao-navegacao{
     background: linear-gradient(to right, #56CCF2, #2F80ED);
 }
