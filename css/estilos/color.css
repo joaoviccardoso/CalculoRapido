@@ -5,7 +5,8 @@
     --color-verde: linear-gradient(to right, #A8D5BA, #B7E4C7);
     --color-letra: #222222;
     --color-container: #f8f8f8;
-    --color-destacar-letra:#4CAF50 ;
+    --color-destacar-letra:#4CAF50;
+    --vermelho-vivo: #d9534f;
 
     --font-titulo:"Montserrat", sans-serif;
     --font-texto: "Inter", sans-serif;

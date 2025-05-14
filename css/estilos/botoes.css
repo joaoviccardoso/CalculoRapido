@@ -158,3 +158,9 @@
     border-color: #2c8be7;
     box-shadow: 0 0 0 2px rgba(44, 139, 231, 0.2);
   }
+
+/*botoes modal*/
+
+.btnFecharModal{
+    background-color: var(--vermelho-vivo);
+}

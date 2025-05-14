@@ -46,3 +46,17 @@
     background:  rgba(0, 0, 0, 0.5);
     transition: background 0.3s ease;
 }
+
+/*Modal historico*/
+
+.modal-header, .modal-footer{
+    background: var(--color-verde);
+    color: var(--color-backgroud);
+    font-family: var(--font-titulo);
+}
+
+.modal-content{
+    border-radius: 16px;
+    background: var(--color-backgroud);
+    font-family: var(--font-texto);
+}
