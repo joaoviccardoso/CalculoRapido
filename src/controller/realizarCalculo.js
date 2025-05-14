@@ -3,7 +3,6 @@ import { Calculos } from "../models/calculos.js";
 export class RealizarCalculos{
     constructor(){
         this.btnEnviar = document.querySelector(".btn-realizar-calcular");
-       
         this.eventoDeclick();
     }
 
@@ -18,6 +17,7 @@ export class RealizarCalculos{
     }
 
     async chamarCalculo(valores, idBtn){
+        let historico = JSON.parse(localStorage.getItem("calculo")) || [];
         let resposta
 
         const calculos = new Calculos(valores)
@@ -86,10 +86,14 @@ export class RealizarCalculos{
                 resposta = calculos.areaPerimetro()
                 break                         
             default:
+                //adicionar dialog de erro
                 console.warn("Operação não reconhecida!");
                 return;
         }
 
+        historico
+        localStorage.setItem("calculo", JSON.stringify(historico))
+        console.log(historico)
         const containerResposta = this.pegarContainerResposta()
         containerResposta.innerHTML = "";
         for (const chave in resposta) {

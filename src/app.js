@@ -20,3 +20,10 @@ btnsEscolherCalculoHeader.forEach(btnHeader => {
         templetesController.exibirCalculos(textBtn)
     })
 });
+
+const btnHistorico = document.querySelector(".btn-historico");
+
+btnHistorico.addEventListener("click", () =>{
+    let calculosSalvos = JSON.parse(localStorage.getItem('calculo'))
+    console.log(calculosSalvos)
+})
