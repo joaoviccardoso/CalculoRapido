@@ -162,5 +162,11 @@
 /*botoes modal*/
 
 .btnFecharModal{
+    width: 150px;
     background-color: var(--vermelho-vivo);
+}
+
+.btnLimparHistorico{
+    width: 150px;
+    background: var(--color-botao);
 }

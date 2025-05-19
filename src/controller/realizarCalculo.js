@@ -65,22 +65,22 @@ export class RealizarCalculos{
                 resposta = calculos.horaExtra()
                 break   
             case "btnRescisaoTrabalhista":
-                resposta = calculos.rescisaoTrabalhista(valores)
+                resposta = calculos.rescisaoTrabalhista()
                 break
             case "btnConsumoEnergia":
-                resposta = calculos.consumoEnergia(valores)
+                resposta = calculos.consumoEnergia()
                 break
             case "btnConversaoMoedas":
-                resposta = await calculos.conversaoMoedas(valores)
+                resposta = await calculos.conversaoMoedas()
                 break
             case "btnConversaoMedidas":
-                resposta = calculos.conversaoMedidas(valores)
+                resposta = calculos.conversaoMedidas()
                 break
             case "btnEquacao1Grau":
-                resposta = calculos.equacao1Grau(valores)
+                resposta = calculos.equacao1Grau()
                 break
             case "btnEquacao2Grau":
-                resposta = calculos.equacao2Grau(valores)
+                resposta = calculos.equacao2Grau()
                 break
             case "btnAreaPerimetro":
                 resposta = calculos.areaPerimetro()
@@ -91,9 +91,11 @@ export class RealizarCalculos{
                 return;
         }
 
-        historico
+        //adiciona os calculos realizados no localstorage
+        let calculoRealizado = document.querySelector("#nomeDoCalculo").textContent
+        historico.push({calculoRealizado , resposta})
         localStorage.setItem("calculo", JSON.stringify(historico))
-        console.log(historico)
+
         const containerResposta = this.pegarContainerResposta()
         containerResposta.innerHTML = "";
         for (const chave in resposta) {

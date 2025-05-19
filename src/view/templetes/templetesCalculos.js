@@ -6,7 +6,7 @@ export class TempletesContainerCalculo {
         const container = document.createElement("div");
         container.classList.add("container-templete-calculos")
         container.innerHTML = `
-                <h2 class="texto-introducao">${titulo}</h2>
+                <h2 class="texto-introducao" id="nomeDoCalculo">${titulo}</h2>
                 <div class="container-templete-inputs ${formatarTexto(titulo)}">
                     ${inputsHTML}
                 </div>
