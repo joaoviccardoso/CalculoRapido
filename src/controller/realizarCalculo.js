@@ -1,4 +1,5 @@
 import { Calculos } from "../models/calculos.js";
+import { modal } from "../utilidades/modal.js";
 
 export class RealizarCalculos{
     constructor(){
@@ -19,6 +20,15 @@ export class RealizarCalculos{
     async chamarCalculo(valores, idBtn){
         let historico = JSON.parse(localStorage.getItem("calculo")) || [];
         let resposta
+
+        let arrayValores = Object.values(valores)
+        let todosValoresZeros = arrayValores.every(valor => valor === 0);
+        if(todosValoresZeros){
+            modal.mostrarDialog("Ops! Nenhum valor válido", "Você precisa informar pelo menos um número diferente de zero para calcular.");
+            return
+        }
+
+        console.log(valores)
 
         const calculos = new Calculos(valores)
         switch(idBtn){
@@ -87,7 +97,7 @@ export class RealizarCalculos{
                 break                         
             default:
                 //adicionar dialog de erro
-                console.warn("Operação não reconhecida!");
+                modal.mostrarDialog("Algo deu errado 😕","Não conseguimos entender qual cálculo você deseja fazer. Tente escolher novamente uma opção no menu.");
                 return;
         }
 
@@ -118,3 +128,4 @@ export class RealizarCalculos{
         return document.querySelector(".container-templete-resultado");
     }
 }
+

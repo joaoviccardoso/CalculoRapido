@@ -163,7 +163,12 @@ export class Calculos{
         let ir = IrOuInss.calcularIR(baseIR);
         let valorFinal = trezeSala - inss - ir;
 
-        return organizarValores("Salario Bruto", this.valor1 ,"Meses Trabalhado", this.valor2,"INSS", inss.toFixed(2),"IR", ir.toFixed(2), "Total a Receber", valorFinal.toFixed(2))
+        return organizarValores("Salario Bruto", this.valor1 ,
+                                "Meses Trabalhado", this.valor2,
+                                "INSS", inss.toFixed(2),
+                                "IR", ir.toFixed(2), 
+                                "Total a Receber", valorFinal.toFixed(2)
+                            )
       }
 
     horaExtra(){
@@ -172,7 +177,10 @@ export class Calculos{
         let valorDaHoraExtra = valorDaHoraTrabalhada * 1.5;
 
         const valorReceber = valorDaHoraExtra * Number(this.valor2)
-        return organizarValores("Salario Bruto", this.valor1 ,"Horas Extras", this.valor2, "Total a Receber", valorReceber.toFixed(2))
+        return organizarValores("Salario Bruto", this.valor1 ,
+                                "Horas Extras", this.valor2,
+                                "Total a Receber", valorReceber.toFixed(2)
+                            )
     }
 
     rescisaoTrabalhista() {

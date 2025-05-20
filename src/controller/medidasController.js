@@ -1,5 +1,6 @@
 import { TempleteGeometrica } from "../view/templetes/templetesGeometrica.js";
 import { TempeltesMedidas } from "../view/templetes/templetesMedidas.js";
+import { modal } from "../utilidades/modal.js";
 
 export class MedidasController {
     constructor(){
@@ -42,7 +43,7 @@ export class MedidasController {
                     templete = this.templeteMedidas.temperatura(formadoInputTemplete);
                     break  
                 default:
-                    console.warn("Operação não reconhecida!");
+                    modal.mostrarDialog("Algo deu errado 😕","Não conseguimos entender qual cálculo você deseja fazer. Tente escolher novamente uma opção no menu.");
                     return;
             }
         } else if(inputId === "geometrica"){
@@ -60,7 +61,7 @@ export class MedidasController {
                     templete = this.templeteGeometrica.triangulo(formadoInputTemplete);
                     break  
                 default:
-                    console.warn("Operação não reconhecida!");
+                    modal.mostrarDialog("Algo deu errado 😕","Não conseguimos entender qual cálculo você deseja fazer. Tente escolher novamente uma opção no menu.");
                     return;
             }
         }

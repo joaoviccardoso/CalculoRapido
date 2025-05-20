@@ -16,7 +16,6 @@ export class TempletesController{
 
     exibirCalculos(idDoBtnCalculo) {
         const containerExibirCalculo = document.querySelector(".container-calculo");
-        containerExibirCalculo.innerHTML = "";
 
         const calculos = {
             soma: { titulo: "Somar", campos: ["Número 1", "Número 2"], id: "btnSoma" },
@@ -42,7 +41,11 @@ export class TempletesController{
             areaeperimetrodefigurasgeometricas: { titulo: "Área e Perímetro", campos: ["Tipo de Forma Geométricas"], id: "btnAreaPerimetro" },
         };        
 
-        if (calculos[idDoBtnCalculo]) {
+        if(calculos[idDoBtnCalculo] === undefined){
+            modal.mostrarDialog("Hmm... não encontramos essa operação","Para continuar, selecione um cálculo no menu lateral ou, se estiver no celular, toque no botão de menu.");
+            return
+        } else{
+            containerExibirCalculo.innerHTML = "";
             const { titulo, campos, id} = calculos[idDoBtnCalculo];
 
             const templeteCalculo = this.gerarTemplate(titulo, campos, id);
@@ -57,7 +60,7 @@ export class TempletesController{
 
                 if(!instrucao){
                     modal.mostrarDialog("Erro para realizar a função", "Erro do servidor")
-                    return
+                    location.reload();
                 }
 
                 const templeteInstrucao = gerarTempleteInstrucao(instrucao);
@@ -65,8 +68,6 @@ export class TempletesController{
             })
             new MedidasController();
             new RealizarCalculos();
-        } else {
-            containerExibirCalculo.innerHTML = "<h4>Por Favor escolha um cálculo válido</h4>";
         }
     }
 
