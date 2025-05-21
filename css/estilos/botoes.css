@@ -87,6 +87,7 @@
 
 .btn-realizar-calcular, .btn-comoFazer{
     display: block;
+    font-size: 1rem;
     font-family: var(--font-texto);
     width: 100%;
     padding: 10px 15px;

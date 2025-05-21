@@ -106,13 +106,33 @@ export class RealizarCalculos{
         historico.push({calculoRealizado , resposta})
         localStorage.setItem("calculo", JSON.stringify(historico))
 
-        const containerResposta = this.pegarContainerResposta()
+        const containerResposta = this.pegarContainerResposta();
         containerResposta.innerHTML = "";
+
+        // Criar a tabela e adicionar classes para estilização via CSS
+        const tabela = document.createElement("table");
+        tabela.classList.add("tabela-resposta"); // Você pode usar essa classe no seu CSS
+
+        // Criar corpo da tabela
+        const tbody = document.createElement("tbody");
+        tbody.classList.add("tabela-corpo")
+
         for (const chave in resposta) {
-            const paragrafo = document.createElement("p");
-            paragrafo.textContent = `${chave}: ${resposta[chave]}`;
-            containerResposta.appendChild(paragrafo);
+            const linha = document.createElement("tr");
+
+            const tdChave = document.createElement("td");
+            tdChave.textContent = chave;
+
+            const tdConteudo = document.createElement("td");
+            tdConteudo.textContent = resposta[chave];
+
+            linha.appendChild(tdChave);
+            linha.appendChild(tdConteudo);
+            tbody.appendChild(linha);
         }
+
+        tabela.appendChild(tbody);
+        containerResposta.appendChild(tabela);
         }
 
     pegarInputs(){

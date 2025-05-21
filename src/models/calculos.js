@@ -4,6 +4,7 @@ import { CalculosResicao } from "./calculosResicao.js";
 import { CalculosConversaoModels } from "./conversaoModels.js";
 import { GeometricaCalculos } from "./geometricaCalculos.js";
 import { organizarValores } from "../utilidades/organizarValores.js";
+import { modal } from "../utilidades/modal.js";
 
 export class Calculos{
     constructor(valores = []){
@@ -53,7 +54,7 @@ export class Calculos{
         const total = Number(this.valor1) + Number(this.valor2) + Number(this.valor3);
         let resultado
         if(this.valor2 === 0 && this.valor3 === 0){
-            return alert("Coloque pelo menos dois valores para fazer a media.")
+            return modal.mostrarDialog("Ops... esta faltando valor","Coloque pelo menos dois valores para fazer a media.")
         }else if(!Number(this.valor1) == 0 && !Number(this.valor2) == 0 && !Number(this.valor3) == 0){
             resultado = total / 3
         } else {
@@ -237,7 +238,7 @@ export class Calculos{
     //forma de fazer melhoria esta aceitando apenas o calculo simples
     equacao1Grau(){
         if (Number(this.valor1) === 0) {
-            alert("Isso não é uma equação do 1º grau!");
+            modal.mostrarDialog("Erro no Calculo", "Isso não é uma equação do 1º grau, pois o coeficiente A é igual a 0. Uma equação do 1º grau precisa ter a variável com expoente 1 (ex: ax + b = 0, onde a ≠ 0).");
           } else {
             const resultado = -Number(this.valor2) / Number(this.valor1);
             return organizarValores("coeficiente A", this.valor1 ,
@@ -311,7 +312,7 @@ export class Calculos{
                 );
         
             default:
-                alert("erro para calcular");
+                modal.mostrarDialog("Ops... erro para encontrar o calculo ","Estamos trabalhando para resolver isso.");
                 break;
         }
         
