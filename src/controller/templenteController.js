@@ -29,7 +29,7 @@ export class TempletesController{
             juroscompostos: { titulo: "Juros Compostos", campos: ["Capital", "Taxa (%)", "Tempo em meses", "Aporte Mensal"], id: "btnJurosCompostos" },
             descontocomercial: { titulo: "Desconto Comercial", campos: ["Valor Original", "Desconto(%)"], id: "btnDescontoComercial" },
             calculodeparcelasefinanciamentos: { titulo: "Parcelas e Financiamento (Sistema Price)", campos: ["Valor", "Juros (%) Anual", "Tempo em meses", "Valor Entrada"], id: "btnCalculoDeParcelasFinanciamento" },
-            calculodeferias: { titulo: "Cálculo de Férias", campos: ["Salário Base", "Meses Trabalhados", "Dias vendidos"], id: "btnCalculoFerias" },
+            calculodeferias: { titulo: "Cálculo de Férias", campos: ["Salário Base", "Dias vendidos"], id: "btnCalculoFerias" },
             salario13º: { titulo: "13º Salário", campos: ["Salário Base", "Meses Trabalhados"], id: "btnTrezeSalario" },
             horaextra: { titulo: "Hora Extra", campos: ["Salário Hora", "Horas Extras"], id: "btnHoraExtra" },
             rescisaotrabalhista: { titulo: "Rescisão Trabalhista", campos: ["Salário Base", "Saldo FGTS" , "Data de Início", "Data Final" , "Tipo de Rescisão", "Aviso Previo", "Ferias Vencidas"], id: "btnRescisaoTrabalhista" },

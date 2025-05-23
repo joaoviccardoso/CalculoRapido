@@ -66,7 +66,12 @@ export class Calculos{
 
     jurosSimples(){
         const taxaConvertida = Number(this.valor2) / 100
+        if(taxaConvertida === 0){
+            modal.mostrarDialog("Ops... Esta faltando valor", "Taxa Anual e um campo Obrigadorio");
+            return
+        }
         const resultado = Number(this.valor1) * taxaConvertida * Number(this.valor3)
+
         return organizarValores("Capital Inicial", this.valor1 ,"Taxa Anual", this.valor2, "Tempo em Anos", this.valor3, "Total em Juros", resultado.toFixed(2))
     }
 
@@ -74,6 +79,11 @@ export class Calculos{
     jurosCompostos(){
         const taxaDecimalAnual = Number(this.valor2) / 100;
         const taxaMensal = taxaDecimalAnual / 12; // converte para taxa mensal
+
+        if(taxaMensal === 0){
+            modal.mostrarDialog("Ops... Esta faltando valor", "Taxa Anual e um campo Obrigadorio");
+            return
+        }
     
         const montanteCapital = Number(this.valor1) * Math.pow(1 + taxaMensal, Number(this.valor3));
         const montanteAportes = Number(this.valor4) * ((Math.pow(1 + taxaMensal, Number(this.valor3)) - 1) / taxaMensal);
@@ -99,11 +109,15 @@ export class Calculos{
 
 
     calculoDeParcelasFinanciamento(){
+        if(this.valor2 === 0){
+            modal.mostrarDialog("Ops... Esta faltando valor", "Taxa Anual e um campo Obrigadorio");
+            return
+        }
         let valorFinanciado = Number(this.valor1) - Number(this.valor4);
     
         // Calculando a taxa de juros mensal
         let i = (Number(this.valor2) / 12) / 100;
-        
+
         // Calculando o valor da parcela
         let parcela = (valorFinanciado * i) / (1 - Math.pow(1 + i, -Number(this.valor3)));
         return organizarValores(
@@ -117,22 +131,18 @@ export class Calculos{
     //corrigir o codigo se vender as ferais tem q calcular o salario das ferias com os dias que ele saio de ferias
     calculoFerias(){
         const IrOuInss = new CalculoIrEInss()
-        if (Number(this.valor2) > 12) Number(this.valor2) = 12;
+        //if (Number(this.valor2) < 12) modal.mostrarDialog("Opss, valor ");
         
-
-        //ferias
-        let feriasProporcionais = (Number(this.valor1) * Number(this.valor2)) / 12;
-
         // Adicional de 1/3 
-        let adicionalTerco = feriasProporcionais / 3;
+        let adicionalTerco = Number(this.valor1) / 3;
         
         // Cálculo do abono pecuniário (dias vendidos)
-        let abonoPecuniario = (Number(this.valor1) / 30) * Number(this.valor3) * (4 / 3); // Inclui 1/3 do terço constitucional
+        let abonoPecuniario = (Number(this.valor1) / 30) * Number(this.valor2) * (4 / 3); // Inclui 1/3 do terço constitucional
         
          // Valor bruto total
-        let totalBruto = feriasProporcionais + adicionalTerco + abonoPecuniario;
+        let totalBruto = Number(this.valor1) + adicionalTerco + abonoPecuniario;
         
-        let inss = IrOuInss.calcularInss(feriasProporcionais)
+        let inss = IrOuInss.calcularInss(Number(this.valor1))
 
         let baseIR = totalBruto - inss;
         let impostoDeRenda = IrOuInss.calcularIR(baseIR);
@@ -140,10 +150,8 @@ export class Calculos{
          // Valor final líquido
         let totalLiquido = totalBruto - inss - impostoDeRenda;
         return organizarValores(
-            "Salario Bruto", this.valor1 ,
-            "Meses Trabalhado", this.valor2, 
-            "Dias Vendidos", this.valor3, 
-            "Ferais Proporcionais" , feriasProporcionais.toFixed(2), 
+            "Ferais Proporcionais", this.valor1,
+            "Dias Vendidos", this.valor2,  
             "Adiconal 1/3", adicionalTerco.toFixed(2), 
             "Abono Pecuniário", abonoPecuniario.toFixed(2),
             "INSS",inss.toFixed(2),
@@ -180,12 +188,18 @@ export class Calculos{
         const valorReceber = valorDaHoraExtra * Number(this.valor2)
         return organizarValores("Salario Bruto", this.valor1 ,
                                 "Horas Extras", this.valor2,
+                                "Valor Da Hora Trabalhada",valorDaHoraTrabalhada.toFixed(2),
+                                "Valor Da Hora Extra", valorDaHoraExtra.toFixed(2),
                                 "Total a Receber", valorReceber.toFixed(2)
                             )
     }
 
     rescisaoTrabalhista() {
         const calculosResicao = new CalculosResicao();
+        if(this.valor3 === 0 || this.valor4 === 0){
+            modal.mostrarDialog("Ops... Esta faltando valor", "Data Incial e Data Final são campos Obrigadorio");
+            return
+        }
         const ValorReceber = calculosResicao.calcularRescisao(Number(this.valor1), Number(this.valor2), this.valor3, this.valor4, this.valor5, this.valor6, this.valor7);
         return organizarValores("Salario Bruto", this.valor1 ,
                                 "Saldo FGTS", this.valor2, 
@@ -198,6 +212,10 @@ export class Calculos{
     }
 
     consumoEnergia(){
+        if(this.valor1 === 0 || this.valor2 === 0 || this.valor3 === 0 || this.valor4 === 0){
+            modal.mostrarDialog("Ops... Esta faltando valor", "Todos os campos são obrigadorio");
+            return
+        }
         let potenciaEmKw = Number(this.valor1) / 1000;
         let consumoDiario = potenciaEmKw * Number(this.valor2);
         let consumoMensal = consumoDiario * Number(this.valor3);
@@ -215,6 +233,11 @@ export class Calculos{
     }
 
     async conversaoMoedas(){
+        if(this.valor2 === "escolha" || this.valor3 === "escolha"){
+            modal.mostrarDialog("Ops... Esta faltando valor", "Escolha as moedas para conversão");
+            return
+        }
+
         const cotacao = await api.getApi(this.valor2,this.valor3);
         const valorFinal = Number(this.valor1 * cotacao);
         console.log(valorFinal, cotacao)
