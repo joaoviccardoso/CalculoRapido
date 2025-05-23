@@ -59,6 +59,14 @@
     .container-templete-resultado{
         width: 90%;
     }
+
+    .container-instrucao{
+        max-width: 260px;
+    }
+
+    .tabela-resposta{
+        max-width: 260px;
+    }
 }
 
 @media screen and (max-width: 391px) {

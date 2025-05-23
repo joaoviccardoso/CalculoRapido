@@ -31,4 +31,8 @@
         font-size: 1.9rem;
         margin: 0;
     }
+
+    .btn-realizar-calcular, .btn-comoFazer{
+        font-size: .8rem;   
+    }
 }

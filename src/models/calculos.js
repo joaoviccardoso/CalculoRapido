@@ -109,8 +109,8 @@ export class Calculos{
 
 
     calculoDeParcelasFinanciamento(){
-        if(this.valor2 === 0){
-            modal.mostrarDialog("Ops... Esta faltando valor", "Taxa Anual e um campo Obrigadorio");
+        if(this.valor1 === 0 ||this.valor2 === 0 || this.valor3 === 0){
+            modal.mostrarDialog("Ops... Esta faltando valor", "Taxa Anual ou Tempo em meses são campo Obrigadorio");
             return
         }
         let valorFinanciado = Number(this.valor1) - Number(this.valor4);
@@ -251,10 +251,15 @@ export class Calculos{
     conversaoMedidas(){
         const calculosConversao = new CalculosConversaoModels()
         const valorConvertido = calculosConversao.chamarCalculoConversao(Number(this.valor1),this.valor2,this.valor3)
+
+        if(this.valor2 === this.valor3){
+            modal.mostrarDialog("Ops...", "Escolha dois valores diferentes para a conversão");
+            return
+        }
         return organizarValores("Valor", this.valor1 ,
-                                "De", this.valor2, "Para", this.valor3, 
-                                "Valor Convertido", 
-                                valorConvertido.toFixed(2)
+                                "De", this.valor2, 
+                                "Para", this.valor3,
+                                "Valor Convertido", valorConvertido
                             )
     }
 
