@@ -72,7 +72,10 @@ export class Calculos{
         }
         const resultado = Number(this.valor1) * taxaConvertida * Number(this.valor3)
 
-        return organizarValores("Capital Inicial", this.valor1 ,"Taxa Anual", this.valor2, "Tempo em Anos", this.valor3, "Total em Juros", resultado.toFixed(2))
+        return organizarValores("Capital Inicial",this.valor1,
+                                "Taxa Anual", this.valor2, 
+                                "Tempo em Anos", this.valor3, 
+                                "Total em Juros",resultado.toFixed(2))
     }
 
     //Corrigir codigo 

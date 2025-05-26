@@ -94,22 +94,28 @@
 }
 
 .tabela-resposta {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 16px;
-  font-size: 14px;
-  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 16px;
+    font-size: 14px;
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3);
+}
+
+.tabela-head{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
 }
 
 .tabela-corpo tr:nth-child(even) {
-  background-color: var(--azul-claro);
+    background-color: var(--azul-claro);
 }
 
 .tabela-corpo td {
-  border: 1px solid #ddd;
-  padding: 8px;
+    border: 1px solid #ddd;
+    padding: 8px;
 }
-
 
 .container-instrucao{
     display: flex;

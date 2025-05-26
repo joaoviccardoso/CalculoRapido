@@ -27,7 +27,6 @@ const btnHistorico = document.querySelector(".btn-historico");
 btnHistorico.addEventListener("click", () =>{
     let calculosSalvos = JSON.parse(localStorage.getItem('calculo'));
     let containerHistorico = document.querySelector(".modal-body");
-    console.log(calculosSalvos)
     let historico = gerarTempletesDosCalculosRealizados(calculosSalvos)
     containerHistorico.innerHTML = historico
 })
