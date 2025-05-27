@@ -5,6 +5,7 @@ import { CalculosConversaoModels } from "./conversaoModels.js";
 import { GeometricaCalculos } from "./geometricaCalculos.js";
 import { organizarValores } from "../utilidades/organizarValores.js";
 import { modal } from "../utilidades/modal.js";
+import { FormatarResultado } from "../utilidades/formatarParaReal.js";
 
 export class Calculos{
     constructor(valores = []){
@@ -72,10 +73,10 @@ export class Calculos{
         }
         const resultado = Number(this.valor1) * taxaConvertida * Number(this.valor3)
 
-        return organizarValores("Capital Inicial",this.valor1,
-                                "Taxa Anual", this.valor2, 
+        return organizarValores("Capital Inicial",FormatarResultado.formatarParaReal(Number(this.valor1)),
+                                "Taxa Anual", FormatarResultado.formatarPorcentagem(this.valor2), 
                                 "Tempo em Anos", this.valor3, 
-                                "Total em Juros",resultado.toFixed(2))
+                                "Total em Juros", FormatarResultado.formatarParaReal(resultado))
     }
 
     //Corrigir codigo 
@@ -93,11 +94,14 @@ export class Calculos{
         const montanteTotal = montanteCapital + montanteAportes;
 
         return organizarValores(
-            "Capital Inicial", this.valor1,
-            "Taxa Anual (%)", this.valor2,
+            "Capital Inicial", FormatarResultado.formatarParaReal(Number(this.valor1)),
+            "Taxa Anual (%)", FormatarResultado.formatarPorcentagem(this.valor2),
             "Tempo (meses)", this.valor3,
-            "Aporte Mensal", this.valor4,
-            "Montante Final", montanteTotal.toFixed(2))
+            "Aporte Mensal", FormatarResultado.formatarParaReal(Number(this.valor4)),
+            "Montante do Capital Inicial", FormatarResultado.formatarParaReal(montanteCapital),
+            "Montante dos Aportes", FormatarResultado.formatarParaReal(montanteAportes),
+            "Montante Final", FormatarResultado.formatarParaReal(montanteTotal)
+        );
     }
 
     descontoComercial(){
@@ -105,9 +109,10 @@ export class Calculos{
         const Desconto = Number(this.valor1) * taxaDecimal;
         const valorDesconto = Number(this.valor1) - Desconto
         return organizarValores(
-            "Valor original", this.valor1 ,
-            "Desconto", this.valor2, 
-            "Valor Com Desconto", valorDesconto.toFixed(2))
+            "Valor original", FormatarResultado.formatarParaReal(Number(this.valor1)) ,
+            "Desconto", FormatarResultado.formatarPorcentagem(Number(this.valor2)), 
+            "Valor Com Desconto", FormatarResultado.formatarParaReal(valorDesconto)
+        )
     }
 
 
@@ -124,15 +129,20 @@ export class Calculos{
         // Calculando o valor da parcela
         let parcela = (valorFinanciado * i) / (1 - Math.pow(1 + i, -Number(this.valor3)));
         return organizarValores(
-            "Valor do Financiamento", this.valor1 ,
-            "Juros Anual(%)", this.valor2, 
+            "Valor do Financiamento", FormatarResultado.formatarParaReal(Number(this.valor1)),
+            "Juros Anual(%)", FormatarResultado.formatarPorcentagem(Number(this.valor2)), 
             "Tempo em Meses", this.valor3,
-            "Valor Entrada", this.valor4,
-            "Valor de cada parcela", parcela.toFixed(2))
+            "Valor Entrada", FormatarResultado.formatarParaReal(Number(this.valor4)),
+            "Valor de cada parcela", FormatarResultado.formatarParaReal(parcela)
+        );
     }
 
     //corrigir o codigo se vender as ferais tem q calcular o salario das ferias com os dias que ele saio de ferias
     calculoFerias(){
+        if(this.valor2 > 10){
+            modal.mostrarDialog("Obs. Um valor foi passado errado", "Para o Calculo das ferias o funcionario nao pode vender mais toque 1/3 das suas ferias");
+            return
+        }
         const IrOuInss = new CalculoIrEInss()
         //if (Number(this.valor2) < 12) modal.mostrarDialog("Opss, valor ");
         
@@ -153,13 +163,14 @@ export class Calculos{
          // Valor final líquido
         let totalLiquido = totalBruto - inss - impostoDeRenda;
         return organizarValores(
-            "Ferais Proporcionais", this.valor1,
+            "Ferais Proporcionais", FormatarResultado.formatarParaReal(Number(this.valor1)),
             "Dias Vendidos", this.valor2,  
-            "Adiconal 1/3", adicionalTerco.toFixed(2), 
-            "Abono Pecuniário", abonoPecuniario.toFixed(2),
-            "INSS",inss.toFixed(2),
-            "Imposto De Renda", impostoDeRenda.toFixed(2),
-            "Total a Receber", totalLiquido.toFixed(2))
+            "Adiconal 1/3", FormatarResultado.formatarParaReal(adicionalTerco), 
+            "Abono Pecuniário", FormatarResultado.formatarParaReal(abonoPecuniario),
+            "INSS", FormatarResultado.formatarParaReal(-inss),
+            "Imposto De Renda", FormatarResultado.formatarParaReal(-impostoDeRenda),
+            "Total a Receber", FormatarResultado.formatarParaReal(totalLiquido)
+        );
     }
 
     trezeSalario(){
@@ -175,11 +186,11 @@ export class Calculos{
         let ir = IrOuInss.calcularIR(baseIR);
         let valorFinal = trezeSala - inss - ir;
 
-        return organizarValores("Salario Bruto", this.valor1 ,
+        return organizarValores("Salario Bruto", FormatarResultado.formatarParaReal(Number(this.valor1)) ,
                                 "Meses Trabalhado", this.valor2,
-                                "INSS", inss.toFixed(2),
-                                "IR", ir.toFixed(2), 
-                                "Total a Receber", valorFinal.toFixed(2)
+                                "INSS", FormatarResultado.formatarParaReal(-inss),
+                                "IR", FormatarResultado.formatarParaReal(-ir), 
+                                "Total a Receber", FormatarResultado.formatarParaReal(valorFinal)
                             )
       }
 
@@ -189,11 +200,11 @@ export class Calculos{
         let valorDaHoraExtra = valorDaHoraTrabalhada * 1.5;
 
         const valorReceber = valorDaHoraExtra * Number(this.valor2)
-        return organizarValores("Salario Bruto", this.valor1 ,
+        return organizarValores("Salario Bruto", FormatarResultado.formatarParaReal(Number(this.valor1)) ,
                                 "Horas Extras", this.valor2,
-                                "Valor Da Hora Trabalhada",valorDaHoraTrabalhada.toFixed(2),
-                                "Valor Da Hora Extra", valorDaHoraExtra.toFixed(2),
-                                "Total a Receber", valorReceber.toFixed(2)
+                                "Valor Da Hora Trabalhada",FormatarResultado.formatarParaReal(valorDaHoraTrabalhada),
+                                "Valor Da Hora Extra", FormatarResultado.formatarParaReal(valorDaHoraExtra),
+                                "Total a Receber", FormatarResultado.formatarParaReal(valorReceber)
                             )
     }
 
@@ -204,12 +215,12 @@ export class Calculos{
             return
         }
         const ValorReceber = calculosResicao.calcularRescisao(Number(this.valor1), Number(this.valor2), this.valor3, this.valor4, this.valor5, this.valor6, this.valor7);
-        return organizarValores("Salario Bruto", this.valor1 ,
-                                "Saldo FGTS", this.valor2, 
+        return organizarValores("Salario Bruto", FormatarResultado.formatarParaReal(Number(this.valor1)) ,
+                                "Saldo FGTS", FormatarResultado.formatarParaReal(Number(this.valor2)), 
                                 "Data Inicial", this.valor3, 
                                 "Data Final", this.valor4 ,
                                 "Tipo de Demissão", this.valor5 , 
-                                "Total a Receber",ValorReceber.toFixed(2)
+                                "Total a Receber",FormatarResultado.formatarParaReal(ValorReceber)
                             )
                                                
     }
@@ -223,15 +234,11 @@ export class Calculos{
         let consumoDiario = potenciaEmKw * Number(this.valor2);
         let consumoMensal = consumoDiario * Number(this.valor3);
         let custoMensal = consumoMensal * Number(this.valor4);
-        console.log("potencia em kw:", potenciaEmKw);
-        console.log("consumo diario:", consumoDiario);
-        console.log("consumo mensal:", consumoMensal);
-        console.log("custo de consumo:", custoMensal);
 
         return organizarValores("Potencia em Kw", potenciaEmKw ,
                                 "Consumo Diario", consumoDiario, 
                                 "Consumo Mensal", consumoMensal, 
-                                "Custo Mensal" ,custoMensal.toFixed(2)
+                                "Custo Mensal" ,  FormatarResultado.formatarParaReal(custoMensal)
                             )
     }
 
