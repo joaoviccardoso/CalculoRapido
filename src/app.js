@@ -2,15 +2,15 @@ import { TempletesController } from "./controller/templenteController.js";
 import { formatarTexto } from "./utilidades/formatarTexto.js";
 import { gerarTempletesDosCalculosRealizados } from "./view/templetes/historicoTemplete.js";
 
-const btnsCalculos = document.querySelectorAll(".btn-escolher-calculo");
-const templetesController = new TempletesController();
+    const btnsCalculos = document.querySelectorAll(".btn-escolher-calculo");
+    const templetesController = new TempletesController();
 
-btnsCalculos.forEach(btnCalculo => {
-    btnCalculo.addEventListener("click", function(){
-        const idDoBtnCalculo = formatarTexto(btnCalculo.id);
-        templetesController.exibirCalculos(idDoBtnCalculo)
-    })
-});
+    btnsCalculos.forEach(btnCalculo => {
+        btnCalculo.addEventListener("click", function(){
+            const idDoBtnCalculo = formatarTexto(btnCalculo.id);
+            templetesController.exibirCalculos(idDoBtnCalculo)
+        })
+    });
 
 const btnsEscolherCalculoHeader = document.querySelectorAll(".btn-escolher-calculo-header");
 

@@ -15,4 +15,5 @@
 @import url(responsivo/responsivoEstilo/fontResponsiva.css);
 @import url(responsivo/responsivoEstilo/botoesResponsivo.css);
 @import url(layout/layout-calculos/mainSimples.css);
-@import url(estilos/templeteContainerEstilo.css)
+@import url(estilos/templeteContainerEstilo.css);
+@import url(estilos/comoFazer.css);

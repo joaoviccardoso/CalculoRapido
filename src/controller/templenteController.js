@@ -45,12 +45,16 @@ export class TempletesController{
             modal.mostrarDialog("Hmm... não encontramos essa operação","Para continuar, selecione um cálculo no menu lateral ou, se estiver no celular, toque no botão de menu.");
             return
         } else{
+            const containerCalculo = document.querySelector(".container-templete-calculos");
             containerExibirCalculo.innerHTML = "";
             const { titulo, campos, id} = calculos[idDoBtnCalculo];
 
             const templeteCalculo = this.gerarTemplate(titulo, campos, id);
             containerExibirCalculo.appendChild(templeteCalculo)
-
+            //
+            requestAnimationFrame(() => {
+                templeteCalculo.classList.add("animar-entrada");
+            });
             const btnComoFazer = document.querySelector(".btn-comoFazer");
             btnComoFazer.addEventListener("click", () => {
                 const containerResultado = document.querySelector(".container-templete-resultado")
@@ -65,6 +69,14 @@ export class TempletesController{
 
                 const templeteInstrucao = gerarTempleteInstrucao(instrucao);
                 containerResultado.innerHTML = templeteInstrucao;
+
+                // Remove a animação anterior se houver
+                containerResultado.classList.remove("animar-entrada");
+
+                // Garante que a classe será re-aplicada após o conteúdo ser injetado
+                setTimeout(() => {
+                    containerResultado.classList.add("animar-entrada");
+                }, 10);
             })
             new MedidasController();
             new RealizarCalculos();

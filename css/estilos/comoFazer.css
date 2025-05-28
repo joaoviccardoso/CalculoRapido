@@ -1,0 +1,65 @@
+@import url(color.css);
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.container-templete-resultado {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 55%;
+  min-width: 300px;
+  font-weight: 500;
+  color: #333;
+  overflow-y: hidden;
+  background-color: #ffffff;
+  border: 1px solid #dcdcdc;
+  border-radius: 12px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.08);
+
+}
+
+.container-templete-resultado.animar-entrada {
+  animation: slideDown .6s ease forwards;
+}
+
+.tabela-resposta {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 16px;
+    font-size: 14px;
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3);
+}
+
+.tabela-head{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+}
+
+.tabela-corpo tr:nth-child(even) {
+    background-color: var(--azul-claro);
+}
+
+.tabela-corpo td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.container-instrucao{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 750px;
+    max-height: 350px;
+    overflow-y: scroll;
+}
