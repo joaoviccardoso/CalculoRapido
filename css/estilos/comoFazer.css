@@ -15,8 +15,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 55%;
-  min-width: 300px;
+  max-width: 500px;
+  min-width: 250px;
+  max-height: 350px;
   font-weight: 500;
   color: #333;
   overflow-y: hidden;
